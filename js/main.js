@@ -64,29 +64,39 @@ const content = {
         description: "Licenciaturas y postgrados en universidades de prestigio europeo"
       }
     },
+	
+	
+	
     destinations: {
       title: "Destinos Disponibles",
+      subtitle: "Estudia inglés en las ciudades más icónicas del mundo",
       ireland: {
         name: "Irlanda",
-        description: "Estudia en Dublín, Cork, Galway y Limerick. Oportunidad de trabajar 20 horas semanales durante los estudios."
+        description: "Estudia en Dublín o Cork. Oportunidad de trabajar 20 horas semanales durante tus estudios."
       },
       uk: {
         name: "Inglaterra",
-        description: "Programas en Londres, Manchester, Cambridge y Oxford. Experiencia en una de las capitales educativas del mundo."
+        description: "Programas en Londres y Oxford. Vive la experiencia en la cuna del idioma inglés."
+      },
+      usa: {
+        name: "Estados Unidos",
+        description: "Estudia en Nueva York, Miami o Boston. Programas intensivos en las mejores academias."
       },
       spain: {
         name: "España",
-        description: "Estudia en Madrid, Barcelona, Valencia y Sevilla. Combina inglés con la cultura española."
+        description: "Estudia en Madrid o Barcelona. Títulos profesionales con validez en toda la Unión Europea."
       },
       malta: {
         name: "Malta",
-        description: "Clima mediterráneo y educación de calidad. Ideal para cursos de inglés intensivos."
+        description: "El paraíso del Mediterráneo. Inglés de alta calidad con un clima espectacular todo el año."
       },
       cyprus: {
         name: "Chipre",
-        description: "Destino emergente con excelentes programas de inglés y formaciones profesionales."
+        description: "Destino estratégico para negocios y hotelería. Educación europea a costos accesibles."
       }
-    },
+
+	
+	
     methods: {
       title: "Nuestros Métodos",
       method1: {
@@ -155,6 +165,100 @@ const content = {
       about: "Edu Lingo miembro de Edu Nexus",
       rights: "Derechos reservados © 2026 Edu Lingo. Todos los derechos reservados.",
       },
+    pages: {
+      back: "← Volver",
+      request_info: "Solicitar Asesoría Gratuita",
+      english: {
+        title: "Cursos de Inglés",
+        subtitle: "Programas intensivos de inglés general, de negocios y preparación para exámenes",
+        h2: "Domina el idioma con expertos",
+        p: "Nuestros cursos de inglés están diseñados para proporcionarte las herramientas necesarias para comunicarte con fluidez en entornos académicos y profesionales.",
+        benefit1: "Certificación Internacional (IELTS, Cambridge, TOEFL)",
+        benefit2: "Oportunidad de Trabajar legalmente",
+        benefit3: "Visa de Estudio Garantizada",
+        benefit4: "Profesores nativos altamente calificados"
+      },
+      professional: {
+        title: "Formaciones Profesionales",
+        subtitle: "Másters y diplomados en diversas áreas con oportunidad de trabajar durante los estudios",
+        h2: "Impulsa tu carrera internacional",
+        p: "Nuestras formaciones profesionales están diseñadas para brindarte habilidades prácticas y teóricas que te permitan destacar en el mercado laboral global.",
+        benefit1: "Certificación Internacional reconocida",
+        benefit2: "Oportunidad de Trabajar durante los estudios",
+        benefit3: "Visa de Estudio Garantizada",
+        benefit4: "Convenios con empresas líderes"
+      },
+      university: {
+        title: "Programas Universitarios",
+        subtitle: "Licenciaturas y postgrados en universidades de prestigio europeo",
+        h2: "Excelencia académica internacional",
+        p: "Accede a las mejores universidades de Europa con el respaldo de Edu Lingo. Te asesoramos en todo el proceso de admisión y trámites migratorios.",
+        benefit1: "Certificación Internacional de alto nivel",
+        benefit2: "Oportunidad de Trabajar legalmente",
+        benefit3: "Visa de Estudio Garantizada",
+        benefit4: "Acceso a becas y financiamiento"
+      },
+      ireland: {
+        title: "Estudiar en Irlanda",
+        subtitle: "Estudia en Dublín o Cork. Oportunidad de trabajar 20 horas semanales.",
+        h2: "La Isla Esmeralda te espera",
+        p: "Irlanda es uno de los destinos más populares para estudiantes internacionales debido a su hospitalidad, alta calidad educativa y la posibilidad de trabajar legalmente mientras estudias.",
+        benefit1: "Permiso de trabajo de 20 horas semanales",
+        benefit2: "Entorno 100% angloparlante",
+        benefit3: "Cultura vibrante y paisajes increíbles",
+        benefit4: "Sede de grandes empresas tecnológicas"
+      },
+      uk: {
+        title: "Estudiar en Inglaterra",
+        subtitle: "Programas en Londres y Oxford. Vive la experiencia británica.",
+        h2: "La cuna del idioma inglés",
+        p: "Inglaterra ofrece una experiencia educativa inigualable con instituciones de renombre mundial y una inmersión cultural profunda en ciudades históricas y cosmopolitas.",
+        benefit1: "Inglés británico auténtico",
+        benefit2: "Instituciones académicas de prestigio",
+        benefit3: "Conexión con toda Europa",
+        benefit4: "Entorno multicultural y dinámico"
+      },
+      usa: {
+        title: "Estudiar en Estados Unidos",
+        subtitle: "Estudia en Nueva York, Miami o Boston. Programas intensivos de alto nivel.",
+        h2: "El sueño americano a tu alcance",
+        p: "Estados Unidos ofrece una diversidad académica y cultural sin igual. Desde las vibrantes calles de Nueva York hasta las playas de Miami, encontrarás el entorno perfecto para tu crecimiento.",
+        benefit1: "Programas de inmersión total",
+        benefit2: "Acceso a universidades de la Ivy League",
+        benefit3: "Experiencia cultural global",
+        benefit4: "Infraestructura educativa de primer nivel"
+      },
+      spain: {
+        title: "Estudiar en España",
+        subtitle: "Títulos profesionales con validez en toda la Unión Europea.",
+        h2: "Tu puerta de entrada a Europa",
+        p: "España ofrece una educación de alta calidad en un entorno culturalmente rico y acogedor. Obtén títulos reconocidos internacionalmente mientras disfrutas de un estilo de vida inigualable.",
+        benefit1: "Títulos con validez en toda la UE",
+        benefit2: "Entorno cultural y gastronómico único",
+        benefit3: "Clima mediterráneo excepcional",
+        benefit4: "Oportunidades de prácticas profesionales"
+      },
+      malta: {
+        title: "Estudiar en Malta",
+        subtitle: "Inglés de alta calidad con un clima mediterráneo espectacular.",
+        h2: "Aprende inglés bajo el sol",
+        p: "Malta es el destino ideal para quienes buscan combinar el aprendizaje del inglés con un estilo de vida relajado y soleado en el corazón del Mediterráneo.",
+        benefit1: "Destino económico y seguro",
+        benefit2: "Clima soleado casi todo el año",
+        benefit3: "Comunidad internacional vibrante",
+        benefit4: "Escuelas de inglés acreditadas"
+      },
+      cyprus: {
+        title: "Estudiar en Chipre",
+        subtitle: "Excelencia académica a precios competitivos, estilo Inglés nativo.",
+        h2: "Calidad educativa en el Mediterráneo",
+        p: "Chipre ofrece programas académicos de alta calidad siguiendo el modelo educativo británico, pero con costos de vida y matrícula mucho más accesibles.",
+        benefit1: "Costos competitivos y alta calidad",
+        benefit2: "Estilo de vida mediterráneo seguro",
+        benefit3: "Programas en inglés nativo",
+        benefit4: "Oportunidades de transferencia a la UE"
+      }
+    },
     floating: {
       presencial: "Presenciales",
       presencial_desc: "En Europa",
@@ -232,11 +336,18 @@ const content = {
         name: "Inglaterra",
         description: "Programas em Londres, Manchester, Cambridge e Oxford. Experiência em uma das capitais educacionais do mundo."
       },
+	  
+	   usa: {
+        name: "Estados Unidos",
+        description: "Estude na cidade mais cosmopolita, Nova York,Miami, Boston, Ciência Moderna." 
+      },
+	  
       spain: {
         name: "Espanha",
         description: "Estude em Madrid, Barcelona, Valência e Sevilha. Combine inglês com a cultura espanhola."
       },
-      malta: {
+	  
+	        malta: {
         name: "Malta",
         description: "Clima mediterrâneo e educação de qualidade. Ideal para cursos de inglês intensivos."
       },
@@ -311,12 +422,106 @@ const content = {
     },
     footer: {
       about: "Edu Lingo é seu aliado Edu Nexus CLG",
-      rights: "Direitos reservados © 2026 Edu Lingo. Todos os direitos reservados.",
+      rights: "Direitos reservados © 2026 Edu Lingo. Todos los derechos reservados.",
       privacy: "Política de Privacidade",
       terms: "Termos e Condições",
       company: "Empresa",
       programs_link: "Programas",
       },
+    pages: {
+      back: "← Voltar",
+      request_info: "Solicitar Consultoria Gratuita",
+      english: {
+        title: "Cursos de Inglês",
+        subtitle: "Programas intensivos de inglês geral, de negócios e preparação para exames",
+        h2: "Domine o idioma com especialistas",
+        p: "Nossos cursos de inglês são projetados para fornecer as ferramentas necessárias para se comunicar com fluência em ambientes acadêmicos e profissionais.",
+        benefit1: "Certificação Internacional (IELTS, Cambridge, TOEFL)",
+        benefit2: "Oportunidade de Trabalhar legalmente",
+        benefit3: "Visto de Estudo Garantido",
+        benefit4: "Professores nativos altamente qualificados"
+      },
+      professional: {
+        title: "Formações Profissionais",
+        subtitle: "Mestrados e diplomas em diversas áreas com oportunidade de trabalhar durante os estudos",
+        h2: "Impulsione sua carreira internacional",
+        p: "Nossas formações profissionais são projetadas para fornecer habilidades práticas e teóricas que permitam que você se destaque no mercado de trabalho global.",
+        benefit1: "Certificação Internacional reconhecida",
+        benefit2: "Oportunidade de Trabalhar durante os estudos",
+        benefit3: "Visto de Estudo Garantido",
+        benefit4: "Convênios com empresas líderes"
+      },
+      university: {
+        title: "Programas Universitários",
+        subtitle: "Licenciaturas e pós-graduações em universidades de prestígio europeu",
+        h2: "Excelência acadêmica internacional",
+        p: "Acesse as melhores universidades da Europa com o apoio da Edu Lingo. Assessoramos você em todo o processo de admissão e trâmites migratórios.",
+        benefit1: "Certificação Internacional de alto nível",
+        benefit2: "Oportunidade de Trabalhar legalmente",
+        benefit3: "Visto de Estudo Garantido",
+        benefit4: "Acesso a bolsas e financiamento"
+      },
+      ireland: {
+        title: "Estudar na Irlanda",
+        subtitle: "Estude em Dublin ou Cork. Oportunidade de trabalhar 20 horas semanais.",
+        h2: "A Ilha Esmeralda espera por você",
+        p: "A Irlanda é um dos destinos mais populares para estudantes internacionais devido à sua hospitalidade, alta qualidade educacional e à possibilidade de trabalhar legalmente enquanto estuda.",
+        benefit1: "Permissão de trabalho de 20 horas semanais",
+        benefit2: "Ambiente 100% anglófono",
+        benefit3: "Cultura vibrante e paisagens incríveis",
+        benefit4: "Sede de grandes empresas de tecnologia"
+      },
+      uk: {
+        title: "Estudar na Inglaterra",
+        subtitle: "Programas em Londres e Oxford. Viva a experiência britânica.",
+        h2: "O berço da língua inglesa",
+        p: "A Inglaterra oferece uma experiência educacional inigualável com instituições de renome mundial e uma imersão cultural profunda em cidades históricas e cosmopolitas.",
+        benefit1: "Inglês britânico autêntico",
+        benefit2: "Instituições acadêmicas de prestígio",
+        benefit3: "Conexão com toda a Europa",
+        benefit4: "Ambiente multicultural e dinâmico"
+      },
+      usa: {
+        title: "Estudar nos Estados Unidos",
+        subtitle: "Estude em Nova York, Miami ou Boston. Programas intensivos de alto nível.",
+        h2: "O sonho americano ao seu alcance",
+        p: "Os Estados Unidos oferecem uma diversidade acadêmica e cultural sem igual. Das ruas vibrantes de Nova York às praias de Miami, você encontrará o ambiente perfeito para o seu crescimento.",
+        benefit1: "Programas de imersão total",
+        benefit2: "Acesso a universidades da Ivy League",
+        benefit3: "Experiência cultural global",
+        benefit4: "Infraestrutura educacional de primeiro nível"
+      },
+      spain: {
+        title: "Estudar na Espanha",
+        subtitle: "Títulos profissionais com validade em toda a União Europeia.",
+        h2: "Sua porta de entrada para a Europa",
+        p: "A Espanha oferece uma educação de alta qualidade em um ambiente culturalmente rico e acolhedor. Obtenha títulos reconhecidos internacionalmente enquanto desfruta de um estilo de vida inigualável.",
+        benefit1: "Títulos com validade em toda a UE",
+        benefit2: "Ambiente cultural e gastronômico único",
+        benefit3: "Clima mediterrâneo excepcional",
+        benefit4: "Oportunidades de estágios profissionais"
+      },
+      malta: {
+        title: "Estudar em Malta",
+        subtitle: "Inglês de alta qualidade com um clima mediterrâneo espetacular.",
+        h2: "Aprenda inglês sob o sol",
+        p: "Malta é o destino ideal para quem busca combinar o aprendizado do inglês com um estilo de vida relaxado e ensolarado no coração do Mediterrâneo.",
+        benefit1: "Destino econômico e seguro",
+        benefit2: "Clima ensolarado quase todo o ano",
+        benefit3: "Comunidade internacional vibrante",
+        benefit4: "Escolas de inglês acreditadas"
+      },
+      cyprus: {
+        title: "Estudar no Chipre",
+        subtitle: "Excelência acadêmica a preços competitivos, estilo Inglês nativo.",
+        h2: "Qualidade educacional no Mediterrâneo",
+        p: "O Chipre oferece programas acadêmicos de alta qualidade seguindo o modelo educacional britânico, mas com custos de vida e mensalidades muito mais acessíveis.",
+        benefit1: "Custos competitivos e alta qualidade",
+        benefit2: "Estilo de vida mediterrâneo seguro",
+        benefit3: "Programas em inglês nativo",
+        benefit4: "Oportunidades de transferência para a UE"
+      }
+    },
     floating: {
       presencial: "Presenciais",
       presencial_desc: "Na Europa",
