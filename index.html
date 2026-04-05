@@ -21,8 +21,12 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/hero-booth.css">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230066CC' width='100' height='100' rx='20'/><text x='50' y='65' font-size='60' font-weight='bold' text-anchor='middle' fill='white' font-family='Arial'>EL</text></svg>">
+	  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+    
 </head>
 <body>
     <!-- ============================================
@@ -33,7 +37,8 @@
             <div class="header-inner">
                 <!-- Logo -->
                 <a href="#home" class="logo">
-                    <div class="logo-icon">EL</div>
+				<!- <img src="img/EduLingo-1.jpg" alt="EduNexusLingo Logo"> --> 
+                    <div class="img/lingo600.png"></div>
                     <div class="logo-text">
                         <h1>Edu Lingo</h1>
                         <p data-i18n="footer.company">Empresa</p>
@@ -199,101 +204,121 @@
             </div>
 
             <div class="programs-grid">
-                <!-- English Courses -->
-                <div class="program-card">
-                    <div class="program-header primary">
-                        <div class="program-icon">📚</div>
-                        <h3 data-i18n="programs.english_courses.title">Cursos de Inglés</h3>
-                    </div>
-                    <div class="program-body">
-                        <div class="program-duration">
-                            <span>⏱️</span>
-                            <span data-i18n="programs.english_courses.duration">4 a 12 semanas</span>
-                        </div>
-                        <p class="program-description" data-i18n="programs.english_courses.description">Programas intensivos de inglés general, de negocios y preparación para exámenes</p>
-                        
-                        <div class="program-benefits">
-                            <div class="benefit-item">
-                                <div class="benefit-dot"></div>
-                                <span>Certificación Internacional</span>
-                            </div>
-                            <div class="benefit-item">
-                                <div class="benefit-dot"></div>
-                                <span>Oportunidad de Trabajar</span>
-                            </div>
-                            <div class="benefit-item">
-                                <div class="benefit-dot"></div>
-                                <span>Visa de Estudio Garantizada</span>
-                            </div>
-                        </div>
+                <!-- English Courses --><div class="program-card program-card-with-image">
+    <div class="program-card-image">
+        <img src="img/londres.jpg" alt="Cursos de Inglés en Londres">
+    </div>
+    
+    <div class="program-body">
+        <div class="program-duration">
+            <span>⏱️</span>
+            <span data-i18n="programs.english_courses.duration">4 a 12 semanas</span>
+        </div>
 
-                        <a href="#contact" class="btn btn-primary program-cta" style="width: 100%; text-align: center;">Más Información</a>
-                    </div>
-                </div>
+        <h3 class="program-card-title" data-i18n="programs.english_courses.title">Cursos de Inglés</h3>
+        
+        <p class="program-description" data-i18n="programs.english_courses.description">
+            Programas intensivos de inglés general, de negocios y preparación para exámenes
+        </p>
+        
+        <div class="program-benefits">
+            <div class="benefit-item">
+                <div class="benefit-dot"></div>
+                <span>Certificación Internacional</span>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-dot"></div>
+                <span>Oportunidad de Trabajar</span>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-dot"></div>
+                <span>Visa de Estudio Garantizada</span>
+            </div>
+        </div>
+
+        <a href="#contact" class="btn btn-primary program-cta" style="width: 100%; text-align: center;">
+            Más Información
+        </a>
+    </div>
+</div>
 
                 <!-- Professional Training -->
-                <div class="program-card">
-                    <div class="program-header secondary">
-                        <div class="program-icon">💼</div>
-                        <h3 data-i18n="programs.professional_training.title">Formaciones Profesionales</h3>
-                    </div>
-                    <div class="program-body">
-                        <div class="program-duration">
-                            <span>⏱️</span>
-                            <span data-i18n="programs.professional_training.duration">6 meses a 2 años</span>
-                        </div>
-                        <p class="program-description" data-i18n="programs.professional_training.description">Másters y diplomados en diversas áreas con oportunidad de trabajar durante los estudios</p>
-                        
-                        <div class="program-benefits">
-                            <div class="benefit-item">
-                                <div class="benefit-dot"></div>
-                                <span>Certificación Internacional</span>
-                            </div>
-                            <div class="benefit-item">
-                                <div class="benefit-dot"></div>
-                                <span>Oportunidad de Trabajar</span>
-                            </div>
-                            <div class="benefit-item">
-                                <div class="benefit-dot"></div>
-                                <span>Visa de Estudio Garantizada</span>
-                            </div>
-                        </div>
+<div class="program-card program-card-with-image">
+    <div class="program-card-image">
+        <img src="img/profesionales.jpg" alt="Formaciones Profesionales">
+    </div>
+    
+    <div class="program-body">
+        <div class="program-duration">
+            <span>⏱️</span>
+            <span data-i18n="programs.professional_training.duration">6 meses a 2 años</span>
+        </div>
+        
+        <h3 class="program-card-title" data-i18n="programs.professional_training.title">Formaciones Profesionales</h3>
+        
+        <p class="program-description" data-i18n="programs.professional_training.description">
+            Másters y diplomados en diversas áreas con oportunidad de trabajar durante los estudios
+        </p>
+        
+        <div class="program-benefits">
+            <div class="benefit-item">
+                <div class="benefit-dot"></div>
+                <span>Certificación Internacional</span>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-dot"></div>
+                <span>Oportunidad de Trabajar</span>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-dot"></div>
+                <span>Visa de Estudio Garantizada</span>
+            </div>
+        </div>
 
-                        <a href="#contact" class="btn btn-primary program-cta" style="width: 100%; text-align: center;">Más Información</a>
-                    </div>
-                </div>
+        <a href="#contact" class="btn btn-primary program-cta" style="width: 100%; text-align: center;">
+            Más Información
+        </a>
+    </div>
+</div>
 
                 <!-- University Programs -->
-                <div class="program-card">
-                    <div class="program-header accent">
-                        <div class="program-icon">🎓</div>
-                        <h3 data-i18n="programs.university_programs.title">Programas Universitarios</h3>
-                    </div>
-                    <div class="program-body">
-                        <div class="program-duration">
-                            <span>⏱️</span>
-                            <span data-i18n="programs.university_programs.duration">3 a 4 años</span>
-                        </div>
-                        <p class="program-description" data-i18n="programs.university_programs.description">Licenciaturas y postgrados en universidades de prestigio europeo</p>
-                        
-                        <div class="program-benefits">
-                            <div class="benefit-item">
-                                <div class="benefit-dot"></div>
-                                <span>Certificación Internacional</span>
-                            </div>
-                            <div class="benefit-item">
-                                <div class="benefit-dot"></div>
-                                <span>Oportunidad de Trabajar</span>
-                            </div>
-                            <div class="benefit-item">
-                                <div class="benefit-dot"></div>
-                                <span>Visa de Estudio Garantizada</span>
-                            </div>
-                        </div>
+<div class="program-card program-card-with-image">
+    <div class="program-card-image">
+        <img src="img/university.jpg" alt="Programas Universitarios">
+    </div>
+    
+    <div class="program-body">
+        <div class="program-duration">
+            <span>⏱️</span>
+            <span data-i18n="programs.university_programs.duration">3 a 4 años</span>
+        </div>
 
-                        <a href="#contact" class="btn btn-primary program-cta" style="width: 100%; text-align: center;">Más Información</a>
-                    </div>
-                </div>
+        <h3 class="program-card-title" data-i18n="programs.university_programs.title">Programas Universitarios</h3>
+        
+        <p class="program-description" data-i18n="programs.university_programs.description">
+            Licenciaturas y postgrados en universidades de prestigio europeo
+        </p>
+        
+        <div class="program-benefits">
+            <div class="benefit-item">
+                <div class="benefit-dot"></div>
+                <span>Certificación Internacional</span>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-dot"></div>
+                <span>Oportunidad de Trabajar</span>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-dot"></div>
+                <span>Visa de Estudio Garantizada</span>
+            </div>
+        </div>
+
+        <a href="#contact" class="btn btn-primary program-cta" style="width: 100%; text-align: center;">
+            Más Información
+        </a>
+    </div>
+</div>
             </div>
         </div>
     </section>
@@ -471,64 +496,70 @@
                     <div class="contact-details">
                         <div class="contact-detail">
                             <div class="contact-detail-icon">✉️</div>
-                            <a href="mailto:info@edulingo.com" data-i18n="contact.email">info@edulingo.com</a>
+                            <a href="mailto:lingo@edunexus.eu" data-i18n="contact.email">lingo@edunexus.eu</a>
                         </div>
                         <div class="contact-detail">
                             <div class="contact-detail-icon">📱</div>
-                            <a href="tel:+34911234567" data-i18n="contact.phone">+34 91 123 4567</a>
+                            <a href="tel:+353 876152691" data-i18n="contact.phone">+353 876152691</a>
                         </div>
                         <div class="contact-detail">
                             <div class="contact-detail-icon">💬</div>
-                            <a href="https://wa.me/34911234567" target="_blank" data-i18n="contact.whatsapp">WhatsApp</a>
+                            <a href="https://wa.me/353876152691" target="_blank" data-i18n="contact.whatsapp">WhatsApp</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Contact Form -->
-                <form class="contact-form" id="contactForm">
-                    <h3 data-i18n="contact.title">Contacta con Nosotros</h3>
+             <!-- ═══════════════════════════════════════
+       CONTACTO
+  ═══════════════════════════════════════ -->
+      <!-- Contact Section -->
+  <form 
+  class="contact-form" 
+  id="contactForm" 
+  action="https://formspree.io/f/mlgonool" 
+  method="POST"
+>
+    <h3 data-i18n="contact.title">Contacta con Nosotros</h3>
 
-                    <div class="form-group">
-                        <label for="formName" data-i18n="contact.form_name">Nombre</label>
-                        <input type="text" id="formName" name="name" required data-i18n-placeholder="contact.form_name">
-                    </div>
+    <div class="form-group">
+        <label for="formName" data-i18n="contact.form_name">Nombre</label>
+        <input type="text" id="formName" name="name" required data-i18n-placeholder="contact.form_name">
+    </div>
 
-                    <div class="form-group">
-                        <label for="formEmail" data-i18n="contact.form_email">Email</label>
-                        <input type="email" id="formEmail" name="email" required data-i18n-placeholder="contact.form_email">
-                    </div>
+    <div class="form-group">
+        <label for="formEmail" data-i18n="contact.form_email">Email</label>
+        <input type="email" id="formEmail" name="email" required data-i18n-placeholder="contact.form_email">
+    </div>
 
-                    <div class="form-group">
-                        <label for="formPhone" data-i18n="contact.form_phone">Teléfono</label>
-                        <input type="tel" id="formPhone" name="phone" data-i18n-placeholder="contact.form_phone">
-                    </div>
+    <div class="form-group">
+        <label for="formPhone" data-i18n="contact.form_phone">Teléfono</label>
+        <input type="tel" id="formPhone" name="phone" data-i18n-placeholder="contact.form_phone">
+    </div>
 
-                    <div class="form-group">
-                        <label for="formInterest" data-i18n="contact.form_interest">Interés</label>
-                        <select id="formInterest" name="interest" required>
-                            <option value="">Selecciona tu interés</option>
-                            <option value="english">Cursos de Inglés</option>
-                            <option value="professional">Formaciones Profesionales</option>
-                            <option value="university">Programas Universitarios</option>
-                            <option value="general">Consultoría General</option>
-                        </select>
-                    </div>
+    <div class="form-group">
+        <label for="formInterest" data-i18n="contact.form_interest">Interés</label>
+        <select id="formInterest" name="interest" required>
+            <option value="">Selecciona tu interés</option>
+            <option value="english">Cursos de Inglés</option>
+            <option value="professional">Formaciones Profesionales</option>
+            <option value="university">Programas Universitarios</option>
+            <option value="general">Consultoría General</option>
+        </select>
+    </div>
 
-                    <div class="form-group">
-                        <label for="formMessage" data-i18n="contact.form_message">Mensaje</label>
-                        <textarea id="formMessage" name="message" data-i18n-placeholder="contact.form_message"></textarea>
-                    </div>
+    <div class="form-group">
+        <label for="formMessage" data-i18n="contact.form_message">Mensaje</label>
+        <textarea id="formMessage" name="message" data-i18n-placeholder="contact.form_message"></textarea>
+    </div>
 
-                    <div class="form-checkbox">
-                        <input type="checkbox" id="formTerms" name="terms" required>
-                        <label for="formTerms" data-i18n="contact.form_terms">Acepto los términos y condiciones</label>
-                    </div>
+    <div class="form-checkbox">
+        <input type="checkbox" id="formTerms" name="terms_accepted" value="yes" required>
+        <label for="formTerms" data-i18n="contact.form_terms">Acepto los términos y condiciones</label>
+    </div>
 
-                    <button type="submit" class="form-submit" data-i18n="contact.form_submit">Enviar</button>
-                </form>
-            </div>
-        </div>
-    </section>
+    <button type="submit" class="form-submit" data-i18n="contact.form_submit">Enviar</button>
+</form>
+
 
     <!-- ============================================
          FOOTER
@@ -572,9 +603,9 @@
                 <div class="footer-section">
                     <h4 data-i18n="nav.contact">Contacto</h4>
                     <div class="footer-links">
-                        <a href="mailto:info@edulingo.com">info@edulingo.com</a>
-                        <a href="tel:+34911234567">+34 91 123 4567</a>
-                        <a href="https://wa.me/34911234567" target="_blank">WhatsApp</a>
+                        <a href="mailto:lingo@edunexus.eu">lingo@edunexus.eu</a>
+                        <a href="tel:+353 876152691">+353 876152691</a>
+                        <a href="https://wa.me/+353876152691" target="_blank">WhatsApp</a>
                     </div>
                 </div>
             </div>
