@@ -134,8 +134,8 @@ const content = {
     contact: {
       title: "Contacta con Nosotros",
       subtitle: "¿Listo para comenzar tu aventura educativa?",
-      email: "info@edulingo.com",
-      phone: "+34 91 123 4567",
+      email: "lingo@EduNexus.eu",
+      phone: "+353 876152691",
       whatsapp: "WhatsApp",
       form_name: "Nombre",
       form_email: "Email",
@@ -143,7 +143,6 @@ const content = {
       form_interest: "Interés",
       form_message: "Mensaje",
       form_submit: "Enviar",
-      form_terms: "Acepto los términos y condiciones",
       form_interest_options: [
         "Selecciona tu interés",
         "Cursos de Inglés",
@@ -153,17 +152,9 @@ const content = {
       ]
     },
     footer: {
-      about: "Edu Lingo es tu aliado en educación internacional. Más de 15 años de experiencia ayudando estudiantes a alcanzar sus sueños.",
+      about: "Edu Lingo miembro de Edu Nexus",
       rights: "Derechos reservados © 2026 Edu Lingo. Todos los derechos reservados.",
-      privacy: "Política de Privacidad",
-      terms: "Términos y Condiciones",
-      company: "Empresa",
-      programs_link: "Programas",
-      destinations_link: "Destinos",
-      support: "Soporte",
-      contact_us: "Contacto",
-      faq: "Preguntas Frecuentes"
-    },
+      },
     floating: {
       presencial: "Presenciales",
       presencial_desc: "En Europa",
@@ -301,8 +292,8 @@ const content = {
     contact: {
       title: "Entre em Contato",
       subtitle: "Pronto para começar sua aventura educacional?",
-      email: "info@edulingo.com",
-      phone: "+34 91 123 4567",
+      email: "lingo@EduNexus.eu",
+      phone: "+353 876152691",
       whatsapp: "WhatsApp",
       form_name: "Nome",
       form_email: "Email",
@@ -310,7 +301,6 @@ const content = {
       form_interest: "Interesse",
       form_message: "Mensagem",
       form_submit: "Enviar",
-      form_terms: "Aceito os termos e condições",
       form_interest_options: [
         "Selecione seu interesse",
         "Cursos de Inglês",
@@ -320,17 +310,13 @@ const content = {
       ]
     },
     footer: {
-      about: "Edu Lingo é seu aliado em educação internacional. Mais de 15 anos de experiência ajudando estudantes a alcançar seus sonhos.",
+      about: "Edu Lingo é seu aliado Edu Nexus CLG",
       rights: "Direitos reservados © 2026 Edu Lingo. Todos os direitos reservados.",
       privacy: "Política de Privacidade",
       terms: "Termos e Condições",
       company: "Empresa",
       programs_link: "Programas",
-      destinations_link: "Destinos",
-      support: "Suporte",
-      contact_us: "Contato",
-      faq: "Perguntas Frequentes"
-    },
+      },
     floating: {
       presencial: "Presenciais",
       presencial_desc: "Na Europa",
