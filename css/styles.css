@@ -336,6 +336,60 @@ header {
   margin: 0;
 }
 
+.destinations-grid {
+    display: grid;
+    gap: var(--spacing-md);
+    grid-template-columns: 1fr; /* 1 columna en móvil */
+    margin-top: var(--spacing-lg);
+}
+
+/* Tablets (2 columnas) */
+@media (min-width: 768px) {
+    .destinations-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* PC / Desktop (3 columnas) */
+@media (min-width: 1024px) {
+    .destinations-grid {
+        grid-template-columns: repeat(3, 1fr); /* Esto hace el 3 arriba y 3 abajo */
+    }
+}
+
+.destination-card {
+    position: relative;
+    height: 300px;
+    border-radius: var(--radius-lg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    transition: var(--transition);
+}
+
+.destination-card:hover {
+    transform: translateY(-5px);
+}
+
+.destination-content {
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    padding: var(--spacing-md);
+    width: 100%;
+}
+
+.destination-content h3 {
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+}
+
+.destination-content p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
 .program-card-with-image {
     overflow: hidden; /* Para que la imagen respete los bordes redondeados de la tarjeta */
     display: flex;
