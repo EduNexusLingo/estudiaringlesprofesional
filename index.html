@@ -3,77 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Edu Lingo - Cursos de Inglés y Formaciones Profesionales en Europa</title>
     <meta name="description" content="Edu Lingo - Cursos de inglés y formaciones profesionales en Europa con visa de estudio. Irlanda, Inglaterra, España, Malta y Chipre.">
     <meta name="keywords" content="cursos inglés, formaciones profesionales, visa estudio, Europa, Irlanda, Inglaterra">
     <meta name="author" content="Edu Lingo">
+    
     <meta property="og:title" content="Edu Lingo - Educación Internacional">
     <meta property="og:description" content="Estudia inglés y formaciones profesionales en Europa">
+    <meta property="og:type" content="website">
     <meta property="og:image" content="https://d2xsxph8kpxj0f.cloudfront.net/310519663512200687/o5FRYkVHVyFYhtx43irSRn/hero-banner-edu-lingo-GKgcZUaxJchEWU38JN4e7o.webp">
-    
-    <title>Edu Lingo - Cursos de Inglés y Formaciones Profesionales en Europa</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="icon" type="image/png" href="img/lingo600.png">
+    <link rel="apple-touch-icon" href="img/lingo600.png">
+    <meta name="theme-color" content="#0d47a1"> <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Styles -->
+
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/hero-booth.css">
     
-	  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
-  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-
-    
+    <link rel="preload" as="image" href="img/lingo600.png">
 </head>
 <body>
     <!-- ============================================
          HEADER & NAVIGATION
          ============================================ -->
-    <header>
-        <div class="container">
-            <div class="header-inner">
-                <!-- Logo -->
-                <a href="#home" class="logo">
-				<!- <img src="img/EduLingo-1.jpg" alt="EduNexusLingo Logo"> --> 
-                    <div class="img/lingo600.png"></div>
-                    <div class="logo-text">
-                        <h1>Edu Lingo</h1>
-                        <p data-i18n="footer.company">Empresa</p>
-                    </div>
-                </a>
-
-                <!-- Desktop Navigation -->
-                <nav>
-                    <a href="#home" data-i18n="nav.home">Inicio</a>
-                    <a href="#about" data-i18n="nav.about">Sobre Nosotros</a>
-                    <a href="#programs" data-i18n="nav.programs">Programas</a>
-                    <a href="#destinations" data-i18n="nav.destinations">Destinos</a>
-                    <a href="#methods" data-i18n="nav.methods">Métodos</a>
-                    <a href="#videos" data-i18n="nav.videos">Videos</a>
-                    <a href="#testimonials" data-i18n="nav.testimonials">Testimonios</a>
-                    <a href="#contact" data-i18n="nav.contact">Contacto</a>
-                </nav>
-
-                <!-- Right Side Controls -->
-                <div style="display: flex; align-items: center; gap: 1rem;">
-                    <!-- Language Selector -->
-                    <div class="lang-selector">
-                        <button class="lang-btn active" data-lang="es" onclick="setLanguage('es')">ES</button>
-                        <button class="lang-btn" data-lang="pt" onclick="setLanguage('pt')">PT</button>
-                    </div>
-
-                    <!-- CTA Button -->
-                    <a href="#contact" class="btn btn-secondary" style="display: none;" id="headerCTA" data-i18n="hero.cta">Reservar Asesoría</a>
-
-                    <!-- Mobile Menu Button -->
-                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
-                </div>
+		<header class="header">
+		<div class="container header-container">
+        <div class="header-brand">
+            <img src="img/lingo600.png" alt="Edu Lingo" class="header-logo-circle">
+            <div class="header-brand-text">
+                <span class="brand-name">Edu Lingo</span>
+                <span class="brand-subtext" data-i18n="Company">Empresa</span>
             </div>
         </div>
-    </header>
+
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="#home" class="nav-link active" data-i18n="nav.home">Inicio</a></li>
+                <li><a href="#about" class="nav-link" data-i18n="nav.about">Sobre Nosotros</a></li>
+                <li><a href="#programs" class="nav-link" data-i18n="nav.programs">Programas</a></li>
+                <li><a href="#destinations" class="nav-link" data-i18n="nav.destinations">Destinos</a></li>
+                <li><a href="#methods" class="nav-link" data-i18n="nav.methods">Métodos</a></li>
+                <li><a href="#videos" class="nav-link" data-i18n="nav.videos">Videos</a></li>
+                <li><a href="#testimonials" class="nav-link" data-i18n="nav.testimonials">Testimonios</a></li>
+                <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="lang-selector">
+            <button class="lang-btn active" onclick="setLanguage('es')">ES</button>
+            <button class="lang-btn" onclick="setLanguage('pt')">PT</button>
+        </div>
+		</div>
+		</header>
 
     <!-- ============================================
          HERO SECTION
