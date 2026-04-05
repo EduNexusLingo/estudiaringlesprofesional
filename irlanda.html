@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="pages.ireland.title">Estudiar en Irlanda - Edu Lingo</title>
+    <link rel="icon" type="image/png" href="img/lingo600.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/hero-booth.css">
+    <style>
+        .page-header {
+            padding: 120px 0 60px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://d2xsxph8kpxj0f.cloudfront.net/310519663512200687/o5FRYkVHVyFYhtx43irSRn/ireland-destination-2XmSaaVsfCDznQt7uEeRfA.webp');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+        .content-section { padding: 60px 0; }
+        .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        @media (max-width: 768px) { .details-grid { grid-template-columns: 1fr; } }
+        .back-link { display: inline-block; margin-bottom: 20px; color: var(--primary); font-weight: 600; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="header-brand">
+                <a href="index.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+                    <img src="img/lingo600.png" alt="Edu Lingo" class="header-logo-circle">
+                    <div class="header-brand-text">
+                        <span class="brand-name">Edu Lingo</span>
+                        <span class="brand-subtext" data-i18n="Company">Empresa</span>
+                    </div>
+                </a>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html#home" class="nav-link" data-i18n="nav.home">Inicio</a></li>
+                    <li><a href="index.html#programs" class="nav-link" data-i18n="nav.programs">Programas</a></li>
+                    <li><a href="index.html#destinations" class="nav-link active" data-i18n="nav.destinations">Destinos</a></li>
+                    <li><a href="index.html#contact" class="nav-link" data-i18n="nav.contact">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="lang-selector">
+                <button class="lang-btn" data-lang="es" onclick="setLanguage('es')">ES</button>
+                <button class="lang-btn" data-lang="pt" onclick="setLanguage('pt')">PT</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 data-i18n="pages.ireland.title">Estudiar en Irlanda</h1>
+            <p data-i18n="pages.ireland.subtitle">Estudia en Dublín o Cork. Oportunidad de trabajar 20 horas semanales.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <a href="index.html#destinations" class="back-link" data-i18n="pages.back">← Volver</a>
+            <div class="details-grid">
+                <div>
+                    <h2 data-i18n="pages.ireland.h2">La Isla Esmeralda te espera</h2>
+                    <p data-i18n="pages.ireland.p">Irlanda es uno de los destinos más populares para estudiantes internacionales debido a su hospitalidad, alta calidad educativa y la posibilidad de trabajar legalmente mientras estudias.</p>
+                    <ul class="program-benefits" style="margin-top: 20px;">
+                        <li class="benefit-item"><div class="benefit-dot"></div><span data-i18n="pages.ireland.benefit1">Permiso de trabajo de 20 horas semanales</span></li>
+                        <li class="benefit-item"><div class="benefit-dot"></div><span data-i18n="pages.ireland.benefit2">Entorno 100% angloparlante</span></li>
+                        <li class="benefit-item"><div class="benefit-dot"></div><span data-i18n="pages.ireland.benefit3">Cultura vibrante y paisajes increíbles</span></li>
+                        <li class="benefit-item"><div class="benefit-dot"></div><span data-i18n="pages.ireland.benefit4">Sede de grandes empresas tecnológicas</span></li>
+                    </ul>
+                    <a href="index.html#contact" class="btn btn--primary" style="margin-top: 30px; display: inline-block;" data-i18n="pages.request_info">Solicitar Información de Irlanda</a>
+                </div>
+                <div>
+                    <img src="img/dublin.jpg" alt="Dublín, Irlanda" style="width: 100%; border-radius: var(--radius-lg); box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: var(--dark); color: white; padding: 40px 0; text-align: center;">
+        <div class="container">
+            <p data-i18n="footer.rights">© 2026 Edu Lingo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
