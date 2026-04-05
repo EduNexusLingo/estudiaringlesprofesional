@@ -185,6 +185,19 @@ header {
   margin: 0;
 }
 
+.program-card-with-image {
+    overflow: hidden; /* Para que la imagen respete los bordes redondeados de la tarjeta */
+    display: flex;
+    flex-direction: column;
+}
+
+.program-card-image img {
+    width: 100%;
+    height: 200px; /* Ajusta la altura según necesites */
+    object-fit: cover; /* Mantiene la proporción de la imagen sin deformarla */
+    display: block;
+}
+
 /* Navigation */
 nav {
   display: flex;
