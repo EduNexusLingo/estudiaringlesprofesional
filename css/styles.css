@@ -44,7 +44,152 @@
   /* Transitions */
   --transition: all 0.3s ease;
 }
+.header {
+  background-color: var(--white);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--border);
+}
 
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Estilos del Logo Circular */
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-logo-circle {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #eee;
+}
+
+.header-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--primary); /* El azul de tu marca */
+}
+
+.brand-subtext {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Navegación */
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--primary);
+}
+
+/* Botones de Idioma estilo cápsula */
+.lang-selector {
+  display: flex;
+  background: #f0f0f0;
+  padding: 4px;
+  border-radius: 50px;
+}
+
+.lang-btn {
+  border: none;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  background: transparent;
+  transition: var(--transition);
+}
+/* Contenedor de la cuadrícula */
+.features-grid {
+  display: grid;
+  gap: var(--spacing-lg); /* Espacio entre tarjetas */
+  margin-top: var(--spacing-xl);
+  
+  /* Por defecto en móvil: 1 columna */
+  grid-template-columns: 1fr;
+}
+
+/* Configuración para PC (Escritorio) */
+@media (min-width: 992px) {
+  .features-grid {
+    /* Aquí forzamos 2 columnas exactas para que queden 2 arriba y 2 abajo */
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 900px; /* Opcional: centra el bloque para que no sea excesivamente ancho */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Estilo para los nuevos iconos */
+.feature-icon {
+  width: 80px; /* Ajusta el tamaño según tu gusto */
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.feature-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Para que la imagen no se deforme */
+}
+
+/* Ajuste de la tarjeta para que el contenido se alinee bien con el nuevo icono */
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-lg);
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+.lang-btn.active {
+  background: var(--primary);
+  color: white;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -55,6 +200,12 @@ body {
   background-color: var(--white);
   line-height: 1.6;
   font-size: 16px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 /* ============================================
@@ -196,6 +347,123 @@ header {
     height: 200px; /* Ajusta la altura según necesites */
     object-fit: cover; /* Mantiene la proporción de la imagen sin deformarla */
     display: block;
+}
+
+/* --- Estilos para el Header (Edu Lingo) --- */
+
+/* Asegurar que las fuentes 'Poppins' e 'Inter' se usen */
+body {
+    font-family: 'Poppins', sans-serif; /* Usada para títulos */
+}
+
+/* Contenedor principal del header */
+.main-header {
+    background-color: #ffffff; /* Fondo blanco */
+    border-bottom: 1px solid #e0e0e0; /* Línea separadora sutil */
+    padding: 10px 0; /* Espaciado vertical */
+    position: fixed; /* Opcional: fijo arriba */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Asegurar que esté sobre todo */
+}
+
+/* Alineación de los elementos internos */
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Logo izq, Menú centro, Idioma der */
+    align-items: center; /* Centrar verticalmente */
+    max-width: 1200px; /* Ancho máximo (ajusta según tu diseño) */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Area del Logo --- */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio entre imagen y texto */
+}
+
+.header-logo-img {
+    width: 60px; /* Ajusta el tamaño para que sea como el círculo azul */
+    height: 60px;
+    border-radius: 50%; /* Asegura que sea un círculo */
+    object-fit: cover;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-title {
+    font-size: 22px;
+    font-weight: 700; /* Extra-bold */
+    color: #0d47a1; /* Azul corporativo */
+}
+
+.header-subtitle {
+    font-size: 14px;
+    color: #757575; /* Gris secundario */
+}
+
+/* --- Navegación --- */
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Espacio entre enlaces */
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #212121; /* Texto oscuro */
+    font-family: 'Inter', sans-serif; /* Fuente para texto de menú */
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+/* Efecto hover en los enlaces */
+.main-nav a:hover {
+    color: #0d47a1; /* Cambia a azul */
+}
+
+/* --- Selector de Idioma --- */
+.language-selector {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.lang-btn {
+    border: none;
+    background-color: transparent;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    color: #212121;
+}
+
+/* Estilo para el botón activo (como 'ES' en la imagen) */
+.lang-btn.active {
+    background-color: #0d47a1; /* Fondo azul */
+    color: #ffffff; /* Texto blanco */
+}
+
+/* Efecto hover para botones no activos */
+.lang-btn:not(.active):hover {
+    background-color: #e3f2fd; /* Azul muy pálido */
+}
+
+/* --- Ajuste para el resto del contenido --- */
+/* Como el header es fijo (position: fixed), necesitamos añadir espacio 
+   arriba al cuerpo para que no se esconda */
+body {
+    padding-top: 85px; /* Ajusta esta altura para que coincida con tu header */
 }
 
 /* Navigation */
@@ -1218,97 +1486,104 @@ nav a:hover::after {
    13. FOOTER
    ============================================ */
 
-footer {
-  background-color: var(--dark);
-  color: var(--white);
-  padding: var(--spacing-2xl) 0 var(--spacing-lg);
+/* --- FOOTER MODERNO --- */
+.footer {
+    background-color: #f8f9fa;
+    padding: 60px 0 20px 0;
+    border-top: 1px solid #eee;
+    color: var(--dark);
 }
 
-.footer-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--spacing-lg);
-  margin-bottom: var(--spacing-2xl);
+.footer-grid {
+    display: grid;
+    /* 4 columnas iguales en PC */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
 }
 
-.footer-section h4 {
-  color: var(--white);
-  margin-bottom: var(--spacing-md);
-  font-size: 1rem;
+.footer-column h4 {
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
 }
 
-.footer-section p {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.8;
-  margin: 0;
+.footer-column ul {
+    list-style: none;
+    padding: 0;
 }
 
-.footer-links {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
+.footer-column ul li {
+    margin-bottom: 12px;
 }
 
-.footer-links a {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.9rem;
-  transition: var(--transition);
+.footer-column a {
+    text-decoration: none;
+    color: var(--text-muted);
+    transition: color 0.3s;
+    font-size: 0.95rem;
 }
 
-.footer-links a:hover {
-  color: var(--white);
+.footer-column a:hover {
+    color: var(--primary);
 }
 
+/* Columna de Logo */
+.footer-logo {
+    width: 60px;
+    margin-bottom: 15px;
+}
+
+.branding p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Redes Sociales */
 .social-links {
-  display: flex;
-  gap: var(--spacing-md);
-  margin-top: var(--spacing-md);
+    display: flex;
+    gap: 15px;
 }
 
 .social-links a {
-  width: 40px;
-  height: 40px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition);
+    background: #eee;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
 }
 
-.social-links a:hover {
-  background-color: var(--primary);
-}
-
+/* Barra inferior */
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: var(--spacing-lg);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: var(--spacing-md);
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
 }
 
-.footer-bottom p {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.6);
-  margin: 0;
+/* --- RESPONSIVE --- */
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 y 2 en tablets */
+    }
 }
 
-.footer-bottom-links {
-  display: flex;
-  gap: var(--spacing-lg);
+@media (max-width: 576px) {
+    .footer-grid {
+        grid-template-columns: 1fr; /* Todo abajo en móviles */
+        text-align: center;
+    }
+    .social-links {
+        justify-content: center;
+    }
 }
-
-.footer-bottom-links a {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.footer-bottom-links a:hover {
-  color: var(--white);
 }
 
 /* ============================================
