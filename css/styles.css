@@ -158,8 +158,8 @@
 
 /* Estilo para los nuevos iconos */
 .feature-icon {
-  width: 80px; /* Ajusta el tamaño según tu gusto */
-  height: 80px;
+  width: 100px; /* Ajusta el tamaño según tu gusto */
+  height: 100pxpx;
   display: flex;
   align-items: center;
   justify-content: center;
