@@ -158,12 +158,17 @@
 
 /* Estilo para los nuevos iconos */
 .feature-icon {
-  width: 100px; /* Ajusta el tamaño según tu gusto */
-  height: 100pxpx;
+  width: 80px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: var(--spacing-md);
+  background: none;
+  border-radius: 0;
+  color: inherit;
+  font-size: inherit;
+  flex-shrink: unset;
 }
 
 .feature-icon img {
@@ -902,7 +907,7 @@ nav a:hover::after {
   transform: translateY(-4px);
 }
 
-.feature-icon {
+.feature-icon-emoji {
   width: 50px;
   height: 50px;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -2027,11 +2032,13 @@ nav a:hover::after {
 .temu-popup-overlay {
     position: fixed;
     bottom: 150px;
-    right: 40px;
-    width: 340px;
+    right: 100px; /* Movido a la izquierda para que no tape el regalo */
+    width: 380px;
+    max-height: 80vh;
+    overflow-y: auto;
     background: #ffffff;
     border-radius: 24px;
-    padding: 25px;
+    padding: 28px 25px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.25);
     z-index: 10002;
     border: 3px solid #ff4d4d;
@@ -2080,16 +2087,21 @@ nav a:hover::after {
 .temu-popup-title {
     font-weight: 900;
     color: #cc0000;
-    font-size: 20px;
+    font-size: 18px;
     margin: 0;
-    line-height: 1.2;
+    line-height: 1.3;
+    flex: 1;
 }
 
 .temu-popup-text {
-    font-size: 16px;
+    font-size: 15px;
     color: #2d3436;
-    line-height: 1.5;
+    line-height: 1.7;
     margin-bottom: 20px;
+    background: #fff8f8;
+    border-left: 4px solid #ff4d4d;
+    padding: 12px 14px;
+    border-radius: 8px;
 }
 
 .temu-popup-btn {
@@ -2149,6 +2161,7 @@ nav a:hover::after {
         right: 20px;
         left: 20px;
         bottom: 130px;
+        transform-origin: bottom center;
     }
     .temu-gift-container {
         bottom: 25px;
