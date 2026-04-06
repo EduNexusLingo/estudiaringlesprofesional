@@ -108,6 +108,8 @@ async function initTemuGift() {
         const data = await response.json();
         
         if (data.success) {
+            console.log("IP Detectada:", data.ip);
+            console.log("País Detectado:", data.country);
             countryCode = data.country_code;
             const info = countryData[countryCode] || countryData['DEFAULT'];
             flag = info.flag;
