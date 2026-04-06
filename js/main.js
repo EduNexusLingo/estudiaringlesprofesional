@@ -597,6 +597,98 @@ document.addEventListener('click', (e) => {
   }
 });
 
+// Función para detectar país y personalizar mensajes
+//async function detectCountryAndPersonalize() {
+//    try {
+//        // Usamos una API gratuita de geolocalización
+//        const response = await fetch('https://ipapi.co/json/');
+//        const data = await response.json();
+        
+//        const countryCode = data.country_code; // AR, CO, MX, etc.
+//        const countryName = data.country_name;
+//        const heroTitle = document.querySelector('[data-i18n="hero.title"]');
+        
+        // Creamos un banner de oferta dinámica
+//        const banner = document.createElement('div');
+//        banner.className = 'geo-offer-banner';
+        
+//        if (countryCode === 'AR') {
+//           banner.innerHTML = "🇦🇷 ¡Oferta especial para Argentinos! Consulta becas y asesoría en pesos.";
+//            if(heroTitle) heroTitle.innerHTML = "Estudia Inglés en Europa: <span style='color:#FF6B35'>Planes Exclusivos para Argentina</span>";
+//        } else if (countryCode === 'CO') {
+//            banner.innerHTML = "🇨🇴 ¡Hola Colombia! Descubre cómo financiar tu viaje a Irlanda y España.";
+//        } else if (countryCode === 'MX') {
+//       } else if (countryCode === 'BR') {
+//            banner.innerHTML = "🇧🇷 Promoção especial para brasileiros: Estude e trabalhe na Europa!";
+//        } else {
+// /           banner.innerHTML = `🌎 ¡Bienvenido desde ${countryName}! Tenemos programas con visa de trabajo para ti.`;
+//        }
+//
+//        // Insertar el banner después del header
+//        const header = document.querySelector('.header');
+//        header.after(banner);
+//
+//    } catch (error) {
+//        console.log("No se pudo detectar la ubicación para personalización.");
+    }
+}
+
+// Ejecutar cuando el sitio cargue
+//document.addEventListener('DOMContentLoaded', () => {
+// /   detectCountryAndPersonalize();
+//});
+
+
+async function detectCountryAndPersonalize() {
+    const debugBox = document.getElementById('debug-geo');
+    
+    try {
+        // Llamada a la API para obtener IP y País
+        const response = await fetch('https://ipapi.co/json/');
+        const data = await response.json();
+        
+        // MOSTRAR TUS DATOS EN LA CAJA DE PRUEBA
+        if(debugBox) {
+            debugBox.innerHTML = `✅ Conectado desde: <strong>${data.country_name}</strong> | Tu IP: <strong>${data.ip}</strong> | Ciudad: ${data.city}`;
+        }
+
+        // LÓGICA DE PERSONALIZACIÓN
+        const countryCode = data.country_code; // Ejemplo: 'AR'
+        const heroTitle = document.querySelector('[data-i18n="hero.title"]');
+        
+        // Crear el banner de oferta si no existe
+        let banner = document.getElementById('geo-offer-banner');
+        if (!banner) {
+            banner = document.createElement('div');
+            banner.id = 'geo-offer-banner';
+            banner.className = 'geo-offer-banner';
+            const header = document.querySelector('.header');
+            if(header) header.after(banner);
+        }
+
+        // MENSAJES ESPECÍFICOS
+        if (countryCode === 'AR') {
+            banner.innerHTML = "🇦🇷 ¡Atención Argentina! Aprovechá nuestras becas exclusivas y asesoría para tu viaje 2026.";
+            if(heroTitle) heroTitle.innerHTML = "Estudiá Inglés en Europa: <span style='color:#FF6B35'>Beneficios para Argentinos</span>";
+        } 
+        else if (countryCode === 'CO') {
+            banner.innerHTML = "🇨🇴 ¡Hola Colombia! Descubre cómo financiar tu curso de inglés en Irlanda.";
+        }
+        else {
+            banner.innerHTML = `🌎 ¡Bienvenido! Tenemos programas con visa de trabajo para estudiantes de ${data.country_name}.`;
+        }
+
+    } catch (error) {
+        if(debugBox) debugBox.innerHTML = "❌ Error: No se pudo detectar la ubicación. Revisa tu conexión.";
+        console.error("Error de geolocalización:", error);
+    }
+}
+
+// Asegurar que se ejecute al cargar la página
+window.addEventListener('load', detectCountryAndPersonalize);
+
+
+
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
