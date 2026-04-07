@@ -118,6 +118,15 @@
   color: var(--primary);
 }
 
+.hero__social img {
+     /* filter: brightness(0) invert(1); /* Esto vuelve blancos los iconos negros 
+    transition: transform 0.3s ease;*/
+}
+
+.hero__social img:hover {
+    transform: scale(1.2); /* Efecto de agrandado al pasar el mouse */
+}
+
 /* Botones de Idioma estilo cápsula */
 .lang-selector {
   display: flex;
