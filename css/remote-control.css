@@ -1,0 +1,447 @@
+/* ============================================
+   REMOTE CONTROL FLOATING SURVEY MENU
+   Edu Lingo - Control Remoto Personalizado
+   ============================================ */
+
+/* ── Contenedor principal flotante ── */
+#remote-control {
+  position: fixed;
+  bottom: 100px;
+  left: 20px; /* Cambiado de right a left */
+  z-index: 9999;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  /* La transición se desactiva durante el arrastre para mayor fluidez */
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+  touch-action: none; /* Previene scroll mientras se arrastra */
+  user-select: none;
+}
+
+#remote-control.rc-dragging {
+  transition: none !important;
+  opacity: 0.85;
+  cursor: grabbing !important;
+}
+
+/* ── Botón de apertura (cuando está minimizado) ── */
+#rc-toggle-btn {
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #0066CC 0%, #004fa3 100%);
+  border: none;
+  cursor: grab; /* Indica que se puede mover */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0, 102, 204, 0.45);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+#rc-toggle-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 28px rgba(0, 102, 204, 0.6);
+}
+
+#rc-toggle-btn svg {
+  width: 28px;
+  height: 28px;
+  fill: #ffffff;
+}
+
+/* Pulso animado en el botón toggle */
+#rc-toggle-btn::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 18px;
+  border: 2px solid rgba(0, 102, 204, 0.4);
+  animation: rc-pulse 2s ease-in-out infinite;
+}
+
+@keyframes rc-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0; transform: scale(1.2); }
+}
+
+/* ── Panel del control remoto ── */
+#rc-panel {
+  width: 300px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.18), 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: none;
+  flex-direction: column;
+  border: 1px solid rgba(0, 102, 204, 0.12);
+  transform-origin: bottom left; /* Abre desde la izquierda */
+}
+
+#rc-panel.rc-open {
+  display: flex;
+  animation: rc-slide-in 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes rc-slide-in {
+  from { opacity: 0; transform: translateY(20px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0)   scale(1);    }
+}
+
+/* ── Cabecera del panel ── */
+#rc-header {
+  background: linear-gradient(135deg, #0066CC 0%, #004fa3 100%);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+#rc-header-title {
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.3;
+  flex: 1;
+}
+
+#rc-header-subtitle {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.72rem;
+  font-weight: 400;
+  display: block;
+  margin-top: 2px;
+}
+
+#rc-minimize-btn {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  border-radius: 8px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+#rc-minimize-btn:hover {
+  background: rgba(255,255,255,0.35);
+}
+
+#rc-minimize-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: #ffffff;
+}
+
+/* ── Cuerpo del panel ── */
+#rc-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 520px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #0066CC22 transparent;
+}
+
+#rc-body::-webkit-scrollbar { width: 4px; }
+#rc-body::-webkit-scrollbar-thumb { background: #0066CC44; border-radius: 4px; }
+
+/* ── Grupos de campo ── */
+.rc-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.rc-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ── Inputs de texto ── */
+.rc-input {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1.5px solid #E5E7EB;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  font-family: inherit;
+  color: #1F2937;
+  background: #F9FAFB;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.rc-input:focus {
+  border-color: #0066CC;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.12);
+  background: #ffffff;
+}
+
+.rc-input::placeholder {
+  color: #9CA3AF;
+}
+
+/* ── Botones cuadrados de opción ── */
+.rc-btn-grid {
+  display: grid;
+  gap: 7px;
+}
+
+.rc-btn-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.rc-btn-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+.rc-option-btn {
+  padding: 10px 8px;
+  border: 2px solid #E5E7EB;
+  border-radius: 10px;
+  background: #F9FAFB;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #374151;
+  text-align: center;
+  line-height: 1.3;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.rc-option-btn .rc-btn-icon {
+  font-size: 1.2rem;
+  display: block;
+}
+
+.rc-option-btn:hover {
+  border-color: #0066CC;
+  background: #EFF6FF;
+  color: #0066CC;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0, 102, 204, 0.15);
+}
+
+.rc-option-btn.selected {
+  border-color: #0066CC;
+  background: #0066CC;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.35);
+}
+
+.rc-option-btn.selected .rc-btn-icon {
+  filter: brightness(0) invert(1);
+}
+
+/* ── Divisor ── */
+.rc-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #E5E7EB, transparent);
+  margin: 2px 0;
+}
+
+/* ── Botón de acción principal ── */
+#rc-go-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #00A650 0%, #007a3a 100%);
+  border: none;
+  border-radius: 12px;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(0, 166, 80, 0.35);
+  letter-spacing: 0.3px;
+}
+
+#rc-go-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 166, 80, 0.5);
+}
+
+#rc-go-btn:active {
+  transform: translateY(0);
+}
+
+#rc-go-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: #ffffff;
+}
+
+/* ── Mensaje de bienvenida personalizado ── */
+#rc-welcome-msg {
+  display: none;
+  background: linear-gradient(135deg, #EFF6FF, #F0FDF4);
+  border: 1px solid #BFDBFE;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 0.78rem;
+  color: #1e40af;
+  line-height: 1.5;
+  text-align: center;
+}
+
+#rc-welcome-msg strong {
+  color: #0066CC;
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+
+/* ── Nota de privacidad ── */
+#rc-privacy-note {
+  font-size: 0.65rem;
+  color: #9CA3AF;
+  text-align: center;
+  line-height: 1.4;
+}
+
+#rc-privacy-note a {
+  color: #0066CC;
+  text-decoration: none;
+}
+
+/* ── Estado: encuesta completada ── */
+#rc-completed-view {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  padding: 4px 0;
+}
+
+#rc-completed-view .rc-user-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #F0FDF4;
+  border: 1px solid #BBF7D0;
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+#rc-completed-view .rc-user-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0066CC, #00A650);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  color: #fff;
+  font-weight: 700;
+}
+
+#rc-completed-view .rc-user-info {
+  flex: 1;
+}
+
+#rc-completed-view .rc-user-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1F2937;
+}
+
+#rc-completed-view .rc-user-detail {
+  font-size: 0.72rem;
+  color: #6B7280;
+  margin-top: 1px;
+}
+
+.rc-quick-links-title {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.rc-quick-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+}
+
+.rc-quick-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 8px;
+  background: #F9FAFB;
+  border: 1.5px solid #E5E7EB;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #374151;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.rc-quick-link:hover {
+  border-color: #0066CC;
+  background: #EFF6FF;
+  color: #0066CC;
+  transform: translateY(-1px);
+}
+
+.rc-quick-link .rc-ql-icon {
+  font-size: 1.3rem;
+}
+
+.rc-reset-btn {
+  background: none;
+  border: none;
+  color: #9CA3AF;
+  font-size: 0.7rem;
+  cursor: pointer;
+  text-align: center;
+  font-family: inherit;
+  text-decoration: underline;
+  padding: 2px;
+  transition: color 0.2s;
+}
+
+.rc-reset-btn:hover {
+  color: #EF4444;
+}
+
+/* ── Responsive: en móvil se ajusta el panel ── */
+@media (max-width: 480px) {
+  #remote-control {
+    left: 12px;
+    bottom: 90px;
+  }
+
+  #rc-panel {
+    width: 280px;
+  }
+}
+
+@media (max-width: 360px) {
+  #rc-panel {
+    width: 260px;
+  }
+}
