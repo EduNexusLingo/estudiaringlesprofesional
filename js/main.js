@@ -1,6 +1,6 @@
 
 /* ============================================
-   TEMU STYLE GIFT & GEO-DETECTION LOGIC (PRODUCTION)
+   TEMU STYLE GIFT & ROBUST GEO-DETECTION LOGIC
    ============================================ */
 
 const countryData = {
@@ -46,101 +46,130 @@ const countryData = {
     'ES': { name: 'España', demonym: 'Españoles', flag: '🇪🇸', slang: '¡Hola tío!', message: 'tenemos una oferta increíble para ti que estás en España, te garantizamos igualarte el precio o te devolvemos la diferencia.' },
     'PT': { name: 'Portugal', demonym: 'Portugueses', flag: '🇵🇹', slang: 'Olá amigo!', message: 'temos uma oferta incrível para si que está em Portugal, garantimos igualar o preço ou devolvemos a diferença.' },
     'FR': { name: 'Francia', demonym: 'Franceses', flag: '🇫🇷', slang: 'Salut mon pote!', message: 'nous avons une offre incroyable pour vous en France, nous garantissons l\'alignement des prix ou le remboursement de la différence.' },
-    'DE': { name: 'Alemania', demonym: 'Alemanes', flag: '🇩🇪', slang: 'Hallo Freund!', message: 'wir haben ein unglaubliches Angebot für dich in Deutschland, wir garantieren Preisanpassung oder wir erstatten die Differenz.' },
+    'DE': { name: 'Alemania', demonym: 'Alemanes', flag: '🇩🇪', slang: 'Hallo Freund!', message: 'wir haben ein unglaubliches Angebot für dich in Deutschland, wir garantieren Preisanpassung o wir erstatten die Differenz.' },
     'NL': { name: 'Países Bajos', demonym: 'Holandeses', flag: '🇳🇱', slang: 'Hallo maat!', message: 'we hebben een ongelooflijk aanbod voor jou in Nederland, we garanderen elke prijs te matchen of we geven het verschil terug.' },
     'BE': { name: 'Bélgica', demonym: 'Belgas', flag: '🇧🇪', slang: 'Salut copain!', message: 'nous avons une offre incroyable pour vous en Belgique / we hebben een ongelooflijk aanbod voor jou in België.' },
-    'LU': { name: 'Luxemburgo', demonym: 'Luxemburgueses', flag: '🇱🇺', slang: 'Salut!', message: 'mir hunn en onheemlecht Offert fir Iech zu Lëtzebuerg, mir garantéieren all Präis ze passen oder mir rembourséieren d\'Differenz.' },
+    'LU': { name: 'Luxemburgo', demonym: 'Luxemburgueses', flag: '🇱🇺', slang: 'Salut!', message: 'mir hunn en onheemlecht Offert fir Iech zu Lëtzebuerg, mir garantéieren all Präis ze passen o mir rembourséieren d\'Differenz.' },
     'CH': { name: 'Suiza', demonym: 'Suizos', flag: '🇨🇭', slang: 'Hallo! / Salut!', message: 'tenemos una oferta increíble para ti en Suiza / wir haben ein unglaubliches Angebot für dich in der Schweiz.' },
-    'AT': { name: 'Austria', demonym: 'Austríacos', flag: '🇦🇹', slang: 'Servus!', message: 'wir haben ein unglaubliches Angebot für dich in Österreich, wir garantieren Preisanpassung oder wir erstatten die Differenz.' },
+    'AT': { name: 'Austria', demonym: 'Austríacos', flag: '🇦🇹', slang: 'Servus!', message: 'wir haben ein unglaubliches Angebot für dich in Österreich, wir garantieren Preisanpassung o wir erstatten die Differenz.' },
     'IE': { name: 'Irlanda', demonym: 'Irish', flag: '🇮🇪', slang: 'What\'s the craic!', message: 'we have an incredible offer for you in Ireland, we guarantee to match any price or we refund the difference.' },
     'GB': { name: 'Reino Unido', demonym: 'British', flag: '🇬🇧', slang: 'Alright mate!', message: 'we have an incredible offer for you in the UK, we guarantee to match any price or we refund the difference.' },
-    'LI': { name: 'Liechtenstein', demonym: 'Liechtensteiners', flag: '🇱🇮', slang: 'Hallo!', message: 'mir händ es unglaubliches Aagebot für dich i Liechtenstein, mir garantierä jede Priis aapasse oder mir erstatte d\'Differänz.' },
-    'MC': { name: 'Mónaco', demonym: 'Monegasques', flag: '🇲🇨', slang: 'Salut!', message: 'nous avons une offre incroyable pour vous à Monaco, nous garantissons l\'alignement des prix ou le remboursement de la différence.' },
+    'LI': { name: 'Liechtenstein', demonym: 'Liechtensteiners', flag: '🇱🇮', slang: 'Hallo!', message: 'mir händ es unglaubliches Aagebot für dich i Liechtenstein, mir garantierä jede Priis aapasse o mir erstatte d\'Differänz.' },
+    'MC': { name: 'Mónaco', demonym: 'Monegasques', flag: '🇲🇨', slang: 'Salut!', message: 'nous avons une offre incroyable pour vous à Monaco, nous garantissons l\'alignement des prix o le remboursement de la différence.' },
 
     // --- EUROPA NÓRDICA ---
-    'DK': { name: 'Dinamarca', demonym: 'Danes', flag: '🇩🇰', slang: 'Hej ven!', message: 'vi har et utroligt tilbud til dig i Danmark, vi garanterer at matche enhver pris eller vi refunderer forskellen.' },
-    'SE': { name: 'Suecia', demonym: 'Swedes', flag: '🇸🇪', slang: 'Hej kompis!', message: 'vi har ett otroligt erbjudande för dig i Sverige, vi garanterar att matcha hvilket pris som helst eller vi återbetalar skillnaden.' },
-    'NO': { name: 'Noruega', demonym: 'Norwegians', flag: '🇳🇴', slang: 'Hei kompis!', message: 'vi har et utrolig tilbud til deg i Norge, vi garanterer å matche enhver pris eller vi refunderer differansen.' },
+    'DK': { name: 'Dinamarca', demonym: 'Danes', flag: '🇩🇰', slang: 'Hej ven!', message: 'vi har et utroligt tilbud til dig i Danmark, vi garanterer at matche enhver pris o vi refunderer forskellen.' },
+    'SE': { name: 'Suecia', demonym: 'Swedes', flag: '🇸🇪', slang: 'Hej kompis!', message: 'vi har ett otroligt erbjudande för dig i Sverige, vi garanterar att matcha hvilket pris som helst o vi återbetalar skillnaden.' },
+    'NO': { name: 'Noruega', demonym: 'Norwegians', flag: '🇳🇴', slang: 'Hei kompis!', message: 'vi har et utrolig tilbud til deg i Norge, vi garanterer å matche enhver pris o vi refunderer differansen.' },
     'FI': { name: 'Finlandia', demonym: 'Finns', flag: '🇫🇮', slang: 'Moi kaveri!', message: 'meillä on uskomaton tarjous sinulle Suomessa, takaamme hinnanmatchingin tai hyvitämme erotuksen.' },
-    'IS': { name: 'Islandia', demonym: 'Icelanders', flag: '🇮🇸', slang: 'Sæll vinur!', message: 'við erum með ótrúlegt tilboð fyrir þig á Íslandi, við ábyrgjumst að jafna hvaða verð sem er eða við endurgreiðum mismuninn.' },
+    'IS': { name: 'Islandia', demonym: 'Icelanders', flag: '🇮🇸', slang: 'Sæll vinur!', message: 'við erum með ótrúlegt tilboð fyrir þig á Íslandi, við ábyrgjumst að jafna hvaða verð sem er o við endurgreiðum mismuninn.' },
 
     // --- EUROPA DEL SUR ---
     'IT': { name: 'Italia', demonym: 'Italians', flag: '🇮🇹', slang: 'Ciao amico!', message: 'abbiamo un\'offerta incredibile per te in Italia, garantiamo di eguagliare qualsiasi prezzo o rimborsiamo la differenza.' },
     'GR': { name: 'Grecia', demonym: 'Greeks', flag: '🇬🇷', slang: 'Γεια σου φίλε!', message: 'έχουμε μια απίστευτη προσφορά για εσάς στην Ελλάδα, εγγυόμαστε ότι θα ταιριάξουμε οποιαδήποτε τιμή ή θα επιστρέψουμε τη διαφορά.' },
-    'MT': { name: 'Malta', demonym: 'Maltese', flag: '🇲🇹', slang: 'Ħello ħabib!', message: 'għandna offerta inkredibbli għalik f\'Malta, niggarantixxu li naqblu ma\' kwalunkwe prezz jew nirrifondaw id-differenza.' },
-    'CY': { name: 'Chipre', demonym: 'Cypriots', flag: '🇨🇾', slang: 'Γεια σου φίλε!', message: 'έχουμε μια απίστευτη προσφορά για εσάς στην Κύπρο, εγγυόμαστε ότι θα ταιριάξουμε οποιαδήποτε τιμή ή θα επιστρέψουμε τη διαφορά.' },
-    'AL': { name: 'Albania', demonym: 'Albanians', flag: '🇦🇱', slang: 'Tungjatjeta shok!', message: 'ne kemi një ofertë të pabesueshme për ju në Shqipëri, ne garantojmë të përputhim çdo çmim ose të rimbursojmë diferencën.' },
-    'ME': { name: 'Montenegro', demonym: 'Montenegrins', flag: '🇲🇪', slang: 'Zdravo prijatelju!', message: 'imamo nevjerovatnu ponudu za vas u Crnoj Gori, garantiramo da ćemo uporediti bilo koju cijenu ili vratiti razliku.' },
-    'BA': { name: 'Bosnia y Herzegovina', demonym: 'Bosnians', flag: '🇧🇦', slang: 'Zdravo prijatelju!', message: 'imamo nevjerovatnu ponudu za vas u Bosni i Hercegovini, garantiramo da ćemo uporediti bilo koju cijenu ili vratiti razliku.' },
-    'HR': { name: 'Croacia', demonym: 'Croatians', flag: '🇭🇷', slang: 'Bok prijatelju!', message: 'imamo nevjerojatnu ponudu za vas u Hrvatskoj, garantiramo da ćemo uskladiti bilo koju cijenu ili vratiti razliku.' },
-    'SI': { name: 'Eslovenia', demonym: 'Slovenians', flag: '🇸🇮', slang: 'Živjo prijatelj!', message: 'imamo neverjetno ponudbo za vas v Sloveniji, garantiramo, da se bomo prilagodili kateri koli ceni ali povrnili razliko.' },
-    'SK': { name: 'Eslovaquia', demonym: 'Slovaks', flag: '🇸🇰', slang: 'Ahoj priateľ!', message: 'máme pre vás neuveriteľnú ponuku na Slovensku, garantujeme, že vám vyrovnáme akúkoľvek cenu alebo vám vrátime rozdiel.' },
-    'CZ': { name: 'República Checa', demonym: 'Czechs', flag: '🇨🇿', slang: 'Ahoj příteli!', message: 'máme pro vás neuvěřitelnou nabídku v České republice, garantujeme, že vám vyrovnáme jakoukoli cenu nebo vám vrátíme rozdíl.' },
-    'HU': { name: 'Hungría', demonym: 'Hungarians', flag: '🇭🇺', slang: 'Szia haver!', message: 'hihetetlen ajánlatunk van számodra Magyarországon, garantáljuk, hogy bármilyen árat illesztünk, vagy visszatérítjük a különbözetet.' },
-    'RO': { name: 'Rumania', demonym: 'Romanians', flag: '🇷🇴', slang: 'Salut prietene!', message: 'avem o ofertă incredibilă pentru tine în România, garantăm că vom egala orice preț sau vom rambursa diferența.' },
-    'BG': { name: 'Bulgaria', demonym: 'Bulgarians', flag: '🇧🇬', slang: 'Здравей приятелю!', message: 'имаме невероятна оферта за вас в България, гарантираме, че ще съпоставим всяка цена или ще възстановим разликата.' },
-    'RS': { name: 'Serbia', demonym: 'Serbians', flag: '🇷🇸', slang: 'Zdravo prijatelju!', message: 'imamo neverovatnu ponudu za vas u Srbiji, garantiramo da ćemo uporediti bilo cenu ili vratiti razliku.' },
-    'MK': { name: 'Macedonia del Norte', demonym: 'Macedonians', flag: '🇲🇰', slang: 'Здраво пријателе!', message: 'имаме неверојатна понуда за вас во Северна Македонија, гарантираме дека ќе го споредиме секој ценовник или ќе ја вратиме разликата.' },
-    'XK': { name: 'Kosovo', demonym: 'Kosovars', flag: '🇽🇰', slang: 'Tungjatjeta shok!', message: 'ne kemi një ofertë të pabesueshme për ju në Kosovë, ne garantojmë të përputhim çdo çmim ose të rimbursojmë diferencën.' },
+    'MT': { name: 'Malta', demonym: 'Maltese', flag: '🇲🇹', slang: 'Ħello ħabib!', message: 'għandna offerta inkredibbli għalik f\'Malta, niggarantixxu li naqblu ma\' kwalunkwe prezz o nirrifondaw id-differenza.' },
+    'CY': { name: 'Chipre', demonym: 'Cypriots', flag: '🇨🇾', slang: 'Γεια σου φíλε!', message: 'έχουμε μια απίστευτη προσφορά για εσάς στην Κύπρο, εγγυόμαστε ότι θα ταιριάξουμε οποιαδήποτε τιμή ή θα επιστρέψουμε τη διαφορά.' },
+    'AL': { name: 'Albania', demonym: 'Albanians', flag: '🇦🇱', slang: 'Tungjatjeta shok!', message: 'ne kemi një ofertë të pabesueshme për ju në Shqipëri, ne garantojmë të përputhim çdo çmim o të rimbursojmë diferencën.' },
+    'ME': { name: 'Montenegro', demonym: 'Montenegrins', flag: '🇲🇪', slang: 'Zdravo prijatelju!', message: 'imamo nevjerovatnu ponudu za vas u Crnoj Gori, garantiramo da ćemo uporediti bilo koju cijenu o vratiti razliku.' },
+    'BA': { name: 'Bosnia y Herzegovina', demonym: 'Bosnians', flag: '🇧🇦', slang: 'Zdravo prijatelju!', message: 'imamo nevjerovatnu ponudu za vas u Bosni i Hercegovini, garantiramo da ćemo uporediti bilo koju cijenu o vratiti razliku.' },
+    'HR': { name: 'Croacia', demonym: 'Croatians', flag: '🇭🇷', slang: 'Bok prijatelju!', message: 'imamo nevjerojatnu ponudu za vas u Hrvatskoj, garantiramo da ćemo uskladiti bilo koju cijenu o vratiti razliku.' },
+    'SI': { name: 'Eslovenia', demonym: 'Slovenians', flag: '🇸🇮', slang: 'Živjo prijatelj!', message: 'imamo neverjetno ponudbo za vas v Sloveniji, garantiramo, da se bomo prilagodili kateri koli ceni o povrnili razliko.' },
+    'SK': { name: 'Eslovaquia', demonym: 'Slovaks', flag: '🇸🇰', slang: 'Ahoj priateľ!', message: 'máme pre vás neuveriteľnú ponuku na Slovensku, garantujeme, že vám vyrovnáme akúkoľvek cenu o vám vrátime rozdiel.' },
+    'CZ': { name: 'República Checa', demonym: 'Czechs', flag: '🇨🇿', slang: 'Ahoj příteli!', message: 'máme pro vás neuvěřitelnou nabídku v České republice, garantujeme, že vám vyrovnáme jakoukoli cenu o vám vrátíme rozdíl.' },
+    'HU': { name: 'Hungría', demonym: 'Hungarians', flag: '🇭🇺', slang: 'Szia haver!', message: 'hihetetlen ajánlatunk van számodra Magyarországon, garantáljuk, hogy bármilyen árat illesztünk, o visszatérítjük a különbözetet.' },
+    'RO': { name: 'Rumania', demonym: 'Romanians', flag: '🇷🇴', slang: 'Salut prietene!', message: 'avem o ofertă incredibilă pentru tine în România, garantăm că vom egala orice preț o vom rambursa diferența.' },
+    'BG': { name: 'Bulgaria', demonym: 'Bulgarians', flag: '🇧🇬', slang: 'Здравей приятелю!', message: 'имаме невероятна оферта за вас в България, гарантираме, че ще съпоставим всяка цена o ще възстановим разликата.' },
+    'RS': { name: 'Serbia', demonym: 'Serbians', flag: '🇷🇸', slang: 'Zdravo prijatelju!', message: 'imamo neverovatnu ponudu za vas u Srbiji, garantiramo da ćemo uporediti bilo cenu o vratiti razliku.' },
+    'MK': { name: 'Macedonia del Norte', demonym: 'Macedonians', flag: '🇲🇰', slang: 'Здраво пријателе!', message: 'имаме неверојатна понуда за вас во Северна Македонија, гарантираме дека ќе го споредиме секој ценовник o ќе ја вратиме разликата.' },
+    'XK': { name: 'Kosovo', demonym: 'Kosovars', flag: '🇽🇰', slang: 'Tungjatjeta shok!', message: 'ne kemi një ofertë të pabesueshme për ju në Kosovë, ne garantojmë të përputhim çdo çmim o të rimbursojmë diferencën.' },
 
     // --- EUROPA DEL ESTE ---
-    'PL': { name: 'Polonia', demonym: 'Poles', flag: '🇵🇱', slang: 'Cześć przyjacielu!', message: 'mamy niesamowitą ofertę dla Ciebie w Polsce, gwarantujemy dopasowanie każdej ceny lub zwrócimy różnicę.' },
+    'PL': { name: 'Polonia', demonym: 'Poles', flag: '🇵🇱', slang: 'Cześć przyjacielu!', message: 'mamy niesamowitą ofertę dla Ciebie w Polsce, gwarantujemy dopasowanie każdej ceny o zwrócimy różnicę.' },
     'LT': { name: 'Lituania', demonym: 'Lithuanians', flag: '🇱🇹', slang: 'Sveikas drauge!', message: 'turime jums neįtikėtiną pasiūlymą Lietuvoje, garantuojame, kad suderinsime bet kokią kainą arba grąžinsime skirtumą.' },
     'LV': { name: 'Letonia', demonym: 'Latvians', flag: '🇱🇻', slang: 'Sveiks draugs!', message: 'mums jums ir neticams piedāvājums Latvijā, mēs garantējam, ka saskaņosim jebkuru cenu vai atmaksāsim starpību.' },
     'EE': { name: 'Estonia', demonym: 'Estonians', flag: '🇪🇪', slang: 'Tere sõber!', message: 'meil on teile uskumatu pakkumine Eestis, garanteerime iga hinna sobitamise või tagastame vahe.' },
     'UA': { name: 'Ucrania', demonym: 'Ukrainians', flag: '🇺🇦', slang: 'Привіт друже!', message: 'у нас неймовірна пропозиція для вас в Україні, ми гарантуємо, що вирівняємо будь-яку ціну або повернемо різницю.' },
     'MD': { name: 'Moldavia', demonym: 'Moldovans', flag: '🇲🇩', slang: 'Salut prietene!', message: 'avem o ofertă incredibilă pentru tine în Moldova, garantăm că vom egala orice preț sau vom rambursa diferența.' },
     'BY': { name: 'Bielorrusia', demonym: 'Belarusians', flag: '🇧🇾', slang: 'Прывітан сябар!', message: 'у нас неверагодная прапанова для вас у Беларусі, мы гарантуем, што выраўнуем любую цану або вернем розніцу.' },
-    'RU': { name: 'Rusia', demonym: 'Russians', flag: '🇷🇺', slang: 'Привет друг!', message: 'у нас невероятное предложение для вас в России, мы гарантируем, что сравняем любую цену или вернем разницу.' },
+    'RU': { name: 'Rusia', demonym: 'Russians', flag: '🇷🇺', slang: 'Привет друг!', message: 'у нас невероятное предложение для вас в России, мы гарантуем, что сравняем любую цену или вернем разницу.' },
 
     // --- PAÍSES PEQUEÑOS / MICROESTADOS ---
     'AD': { name: 'Andorra', demonym: 'Andorrans', flag: '🇦🇩', slang: 'Hola amic!', message: 'tenemos una oferta increíble para ti que estás en Andorra, te garantizamos igualarte el precio o te devolvemos la diferencia.' },
     'SM': { name: 'San Marino', demonym: 'Sammarinese', flag: '🇸🇲', slang: 'Ciao amico!', message: 'abbiamo un\'offerta incredibile per te a San Marino, garantiamo di eguagliare qualsiasi prezzo o rimborsiamo la diferencia.' },
     'VA': { name: 'Ciudad del Vaticano', demonym: 'Vatican Citizens', flag: '🇻🇦', slang: 'Salve amice!', message: 'habemus mirabilem oblationem tibi in Civitate Vaticana, praestamus aequare pretium vel differentiam refundere.' },
-    'FO': { name: 'Islas Feroe', demonym: 'Faroese', flag: '🇫🇴', slang: 'Hey vinur!', message: 'vit hava eitt ótrúligt tilboð fyri teg í Føroyum, vit ábyrgjast at møta hvørjum prísi ella vit endurgjalda munin.' },
+    'FO': { name: 'Islas Feroe', demonym: 'Faroese', flag: '🇫🇴', slang: 'Hey vinur!', message: 'vit hava eitt ótrúligt tilboð fyri teg í Føroyum, vit ábyrgjast at møta hvørjum prísi o vit endurgjalda munin.' },
     'GL': { name: 'Groenlandia', demonym: 'Greenlanders', flag: '🇬🇱', slang: 'Aluu!', message: 'pineq arlalerinnut tunniussisarpavut Kalaallit Nunaanni, akeqarnissut assigiinngitsut akilerivavat.' },
 
     'DEFAULT': { name: 'tu país', demonym: 'Visitantes', flag: '🌎', slang: '¡Hola!', message: 'tenemos una oferta increíble para ti. Te garantizamos igualarte el precio o te devolvemos la diferencia. ¡No te pierdas esta oportunidad única de estudiar inglés en Europa!' },
 };
 
+async function getGeoData() {
+    // MÉTODO 1: Cloudflare (El más rápido y robusto para producción)
+    try {
+        const cfResponse = await fetch('https://www.cloudflare.com/cdn-cgi/trace');
+        const cfData = await cfResponse.text();
+        const locMatch = cfData.match(/loc=([A-Z]{2})/);
+        if (locMatch && locMatch[1]) {
+            console.log("Detección Cloudflare:", locMatch[1]);
+            return locMatch[1];
+        }
+    } catch (e) { console.warn("Cloudflare no disponible"); }
+
+    // MÉTODO 2: IP-API (Respaldo confiable)
+    try {
+        const response = await fetch('http://ip-api.com/json/');
+        const data = await response.json();
+        if (data && data.countryCode) {
+            console.log("Detección IP-API:", data.countryCode);
+            return data.countryCode;
+        }
+    } catch (e) { console.warn("IP-API no disponible"); }
+
+    // MÉTODO 3: Idioma del Navegador (Último recurso para decidir idioma)
+    const lang = navigator.language || navigator.userLanguage;
+    console.log("Idioma Navegador:", lang);
+    if (lang.startsWith('es')) return 'ES';
+    if (lang.startsWith('pt')) return 'BR';
+    if (lang.startsWith('fr')) return 'FR';
+    
+    return 'DEFAULT';
+}
+
 async function initTemuGift() {
     let countryCode = 'DEFAULT';
-    let flag = '🌎';
-    let slang = '¡Hola!';
-    let demonym = 'Visitantes';
-    let offerTitle = '¡Oferta Exclusiva para Visitantes!';
+    
+    // Intentar detectar país con los 3 métodos
+    countryCode = await getGeoData();
+
+    const info = countryData[countryCode] || countryData['DEFAULT'];
+    const flag = info.flag;
+    const slang = info.slang;
+    const demonym = info.demonym;
+    const offerMessage = info.message;
+    
+    let offerTitle = `¡Oferta Exclusiva para ${demonym}!`;
     let labelPrefix = 'OFERTA PARA';
-    let offerMessage = countryData['DEFAULT'].message;
     let btnText = '¡QUIERO MI OFERTA!';
 
-    try {
-        const response = await fetch('https://ipwho.is/');
-        const data = await response.json();
-        
-        if (data.success) {
-            countryCode = data.country_code;
-            const info = countryData[countryCode] || countryData['DEFAULT'];
-            flag = info.flag;
-            slang = info.slang;
-            demonym = info.demonym;
-            offerMessage = info.message;
-            
-            // Lógica de Idioma Automática
-            const englishCountries = ['US', 'CA', 'GB', 'IE', 'AU', 'NZ', 'JM', 'BS', 'TT', 'GY', 'MT', 'CY', 'PL', 'LT', 'LV', 'EE', 'UA', 'MD', 'BY', 'RU', 'DK', 'SE', 'NO', 'FI', 'IS', 'IT', 'GR', 'AL', 'ME', 'BA', 'HR', 'SI', 'SK', 'CZ', 'HU', 'RO', 'BG', 'RS', 'MK', 'XK', 'AD', 'SM', 'VA', 'FO', 'GL'];
-            
-            if (englishCountries.includes(countryCode) && countryCode !== 'ES' && countryCode !== 'MX' && countryCode !== 'AR' && countryCode !== 'CO' && countryCode !== 'CL' && countryCode !== 'PE' && countryCode !== 'VE' && countryCode !== 'UY' && countryCode !== 'PY' && countryCode !== 'EC' && countryCode !== 'BO' && countryCode !== 'CR' && countryCode !== 'PA' && countryCode !== 'NI' && countryCode !== 'SV' && countryCode !== 'HN' && countryCode !== 'GT' && countryCode !== 'DO' && countryCode !== 'CU' && countryCode !== 'PR') {
-                offerTitle = `Exclusive Offer for ${demonym}!`;
-                labelPrefix = 'OFFER FOR';
-                btnText = 'I WANT MY OFFER!';
-            } else {
-                offerTitle = `¡Oferta Exclusiva para ${demonym}!`;
-                labelPrefix = 'OFERTA PARA';
-                btnText = '¡QUIERO MI OFERTA!';
-            }
-        }
-    } catch (error) {
-        console.error("Error detectando IP:", error);
+    // Lógica de Idioma Automática (Inglés para países no hispanohablantes)
+    const spanishCountries = ['AR', 'MX', 'CO', 'CL', 'PE', 'VE', 'UY', 'PY', 'EC', 'BO', 'CR', 'PA', 'NI', 'SV', 'HN', 'GT', 'DO', 'CU', 'PR', 'ES', 'AD'];
+    const portugueseCountries = ['BR', 'PT'];
+    
+    if (!spanishCountries.includes(countryCode) && !portugueseCountries.includes(countryCode)) {
+        offerTitle = `Exclusive Offer for ${demonym}!`;
+        labelPrefix = 'OFFER FOR';
+        btnText = 'I WANT MY OFFER!';
+    } else if (portugueseCountries.includes(countryCode)) {
+        offerTitle = `Oferta Exclusiva para ${demonym}!`;
+        labelPrefix = 'OFERTA PARA';
+        btnText = 'QUERO MINHA OFERTA!';
     }
+
+    // Eliminar elementos anteriores si existen
+    const oldGift = document.getElementById('temuGiftContainer');
+    const oldPopup = document.getElementById('temuOfferPopup');
+    if (oldGift) oldGift.remove();
+    if (oldPopup) oldPopup.remove();
 
     // Crear el contenedor del regalo
     const giftContainer = document.createElement('div');
