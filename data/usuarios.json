@@ -1,0 +1,12 @@
+{
+  "usuarios": [],
+  "estadisticas": {
+    "total_visitas": 0,
+    "paises": {},
+    "intereses": {}
+  },
+  "config": {
+    "last_updated": "2026-04-07T12:00:00Z",
+    "version": "1.0.0"
+  }
+}
