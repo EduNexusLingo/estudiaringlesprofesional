@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="pages.professional.title">Formaciones Profesionales - Edu Lingo</title>
+    <title data-i18n="pages.vocational.title">Formación Profesional - Edu Lingo</title>
     <link rel="icon" type="image/png" href="img/lingo600.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,9 +20,58 @@
             text-align: center;
         }
         .content-section { padding: 60px 0; }
-        .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-bottom: 60px; }
         @media (max-width: 768px) { .details-grid { grid-template-columns: 1fr; } }
         .back-link { display: inline-block; margin-bottom: 20px; color: var(--primary); font-weight: 600; text-decoration: none; }
+        
+        /* Matriz de Países */
+        .country-matrix {
+            margin-top: 40px;
+            padding: 40px;
+            background: #f8f9fa;
+            border-radius: 20px;
+            text-align: center;
+        }
+        .country-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .country-item {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--dark);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .country-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            background: var(--primary);
+            color: white;
+        }
+        .country-icon {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #eee;
+            transition: border-color 0.3s ease;
+        }
+        .country-item:hover .country-icon {
+            border-color: white;
+        }
+        .country-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
     </style>
     <link rel="stylesheet" href="css/remote-control.css">
 </head>
@@ -55,28 +104,57 @@
 
     <section class="page-header">
         <div class="container">
-            <h1 data-i18n="pages.professional.title">Formaciones Profesionales</h1>
-            <p data-i18n="pages.professional.subtitle">Másters y diplomados en diversas áreas con oportunidad de trabajar durante los estudios</p>
+            <h1 data-i18n="pages.vocational.title">Formación Profesional</h1>
+            <p data-i18n="pages.vocational.subtitle">Impulsa tu carrera con diplomas especializados y prácticos en el extranjero</p>
         </div>
     </section>
 
     <section class="content-section">
         <div class="container">
             <a href="index.html#programs" class="back-link" data-i18n="pages.back">← Volver</a>
+            
             <div class="details-grid">
                 <div>
-                    <h2 data-i18n="pages.professional.h2">Impulsa tu carrera internacional</h2>
-                    <p data-i18n="pages.professional.p">Nuestras formaciones profesionales están diseñadas para brindarte habilidades prácticas y teóricas que te permitan destacar en el mercado laboral global.</p>
+                    <h2 data-i18n="pages.vocational.h2">Especialización de alto nivel</h2>
+                    <p data-i18n="pages.vocational.p">Nuestras formaciones profesionales están diseñadas para conectarte directamente con las necesidades del mercado laboral actual, ofreciendo un enfoque 100% práctico.</p>
                     <ul class="program-benefits" style="margin-top: 20px;">
-                        <li class="benefit-item"><div class="benefit-dot"></div><span data-i18n="pages.professional.benefit1">Certificación Internacional reconocida</span></li>
-                        <li class="benefit-item"><div class="benefit-dot"></div><span data-i18n="pages.professional.benefit2">Oportunidad de Trabajar durante los estudios</span></li>
-                        <li class="benefit-item"><div class="benefit-dot"></div><span data-i18n="pages.professional.benefit3">Visa de Estudio Garantizada</span></li>
-                        <li class="benefit-item"><div class="benefit-dot"></div><span data-i18n="pages.professional.benefit4">Convenios con empresas líderes</span></li>
+                        <li class="benefit-item"><div class="benefit-dot"></div><span data-i18n="pages.vocational.benefit1">Certificaciones reconocidas por la industria</span></li>
+                        <li class="benefit-item"><div class="benefit-dot"></div><span data-i18n="pages.vocational.benefit2">Prácticas en empresas líderes</span></li>
+                        <li class="benefit-item"><div class="benefit-dot"></div><span data-i18n="pages.vocational.benefit3">Flexibilidad de horarios</span></li>
+                        <li class="benefit-item"><div class="benefit-dot"></div><span data-i18n="pages.vocational.benefit4">Docentes expertos en activo</span></li>
                     </ul>
                     <a href="index.html#contact" class="btn btn--primary" style="margin-top: 30px; display: inline-block;" data-i18n="pages.request_info">Solicitar Asesoría Gratuita</a>
                 </div>
                 <div>
-                    <img src="img/formacion2.png" alt="Formación profesional" style="width: 100%; border-radius: var(--radius-lg); box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <img src="img/formacion2.png" alt="Formación Profesional" style="width: 100%; border-radius: var(--radius-lg); box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+
+            <!-- Matriz de Países para Formación Profesional -->
+            <div class="country-matrix">
+                <h2 style="margin-bottom: 10px;">Elige tu destino de especialización</h2>
+                <p>Selecciona un país para ver las formaciones profesionales disponibles</p>
+                <div class="country-grid">
+                    <a href="formaciones.irlanda.html" class="country-item">
+                        <img src="img/dublin.jpg" alt="Irlanda" class="country-icon">
+                        <span class="country-name">Irlanda</span>
+                    </a>
+                    <a href="formaciones.uk.html" class="country-item">
+                        <img src="img/londres.jpg" alt="UK" class="country-icon">
+                        <span class="country-name">UK</span>
+                    </a>
+                    <a href="formaciones.espana.html" class="country-item">
+                        <img src="img/brainstorming.jpg" alt="España" class="country-icon">
+                        <span class="country-name">España</span>
+                    </a>
+                    <a href="formaciones.malta.html" class="country-item">
+                        <img src="img/Malta2.jpg" alt="Malta" class="country-icon">
+                        <span class="country-name">Malta</span>
+                    </a>
+                    <a href="formaciones.chipre.html" class="country-item">
+                        <img src="img/chipre.jpg" alt="Chipre" class="country-icon">
+                        <span class="country-name">Chipre</span>
+                    </a>
                 </div>
             </div>
         </div>

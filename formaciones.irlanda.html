@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formaciones Profesionales en Irlanda - Edu Lingo</title>
+    <link rel="icon" type="image/png" href="img/lingo600.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/hero-booth.css">
+    <link rel="stylesheet" href="css/remote-control.css">
+    <style>
+        :root {
+            --primary: #0066cc;
+            --secondary: #004d99;
+            --accent: #ffcc00;
+            --light: #f8f9fa;
+            --dark: #333;
+            --white: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.1);
+            --radius: 12px;
+        }
+
+        .page-header {
+            padding: 120px 0 60px;
+            background: linear-gradient(rgba(0, 102, 204, 0.8), rgba(0, 102, 204, 0.8)), url('img/profesionales.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+
+        .content-section { padding: 60px 0; background-color: #f4f7f6; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: var(--primary); font-weight: 600; text-decoration: none; }
+        
+        .institution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .institution-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .institution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .card-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .card-content {
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .card-info {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.5s ease;
+            background: #f9f9f9;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        .institution-card:hover .card-details {
+            max-height: 400px;
+            padding: 15px 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .card-footer {
+            padding: 15px 20px;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn-card {
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-more {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-more:hover {
+            background: var(--secondary);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="header-brand">
+                <a href="index.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+                    <img src="img/lingo600.png" alt="Edu Lingo" class="header-logo-circle">
+                    <div class="header-brand-text">
+                        <span class="brand-name">Edu Lingo</span>
+                        <span class="brand-subtext">Empresa</span>
+                    </div>
+                </a>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html#home" class="nav-link">Inicio</a></li>
+                    <li><a href="index.html#programs" class="nav-link">Programas</a></li>
+                    <li><a href="index.html#destinations" class="nav-link">Destinos</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="lang-selector">
+                <button class="lang-btn" data-lang="es">ES</button>
+                <button class="lang-btn" data-lang="pt">PT</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Formaciones Profesionales en Irlanda</h1>
+            <p>Impulsa tu carrera con diplomas especializados y prácticos</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <a href="index.html" class="back-link">← Volver al inicio</a>
+            
+            <div class="institution-grid">
+                <!-- Card 1: UCD Professional Academy -->
+                <div class="institution-card">
+                    <div class="card-image" style="background-image: url('img/formacion2.png');">
+                        <span class="card-badge">Top Ventas</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">UCD Professional Academy</h3>
+                        <div class="card-info">📍 Dublín / Online</div>
+                        <p>Cursos de formación líderes en el sector: Gestión de Proyectos, Marketing Digital, IA para negocios.</p>
+                    </div>
+                    <div class="card-details">
+                        <strong>Diplomas:</strong> Liderazgo, Gestión de Proyectos, Marketing Digital, Análisis de Datos.<br>
+                        <strong>Duración:</strong> 36 horas lectivas.<br>
+                        <strong>Precio:</strong> Desde €1,295 (Ahorro de €300).<br>
+                        <strong>Certificación:</strong> Diploma de la Academia Profesional UCD.
+                    </div>
+                    <div class="card-footer">
+                        <span style="font-weight: 700; color: var(--primary);">Desde €1,295</span>
+                        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Pulse College (Certificados) -->
+                <div class="institution-card">
+                    <div class="card-image" style="background-image: url('img/hero-bg.webp');"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Pulse College (Certificaciones)</h3>
+                        <div class="card-info">📍 Dublín</div>
+                        <p>Cursos intensivos en producción de audio, diseño de sonido y tecnología musical.</p>
+                    </div>
+                    <div class="card-details">
+                        <strong>Cursos:</strong> Certificados de corta duración en Pro Tools, Ableton Live, Logic Pro.<br>
+                        <strong>Instalaciones:</strong> Acceso a estudios profesionales durante el curso.<br>
+                        <strong>Público:</strong> Profesionales que buscan actualizar sus habilidades técnicas.
+                    </div>
+                    <div class="card-footer">
+                        <span style="font-weight: 700; color: var(--primary);">Certificado Técnico</span>
+                        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: var(--dark); color: white; padding: 40px 0; text-align: center;">
+        <div class="container">
+            <p>© 2026 Edu Lingo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="js/github-storage.js"></script>
+    <script src="js/remote-control.js"></script>
+</body>
+</html>

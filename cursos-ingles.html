@@ -20,9 +20,58 @@
             text-align: center;
         }
         .content-section { padding: 60px 0; }
-        .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-bottom: 60px; }
         @media (max-width: 768px) { .details-grid { grid-template-columns: 1fr; } }
         .back-link { display: inline-block; margin-bottom: 20px; color: var(--primary); font-weight: 600; text-decoration: none; }
+        
+        /* Matriz de Países */
+        .country-matrix {
+            margin-top: 40px;
+            padding: 40px;
+            background: #f8f9fa;
+            border-radius: 20px;
+            text-align: center;
+        }
+        .country-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .country-item {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--dark);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .country-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            background: var(--primary);
+            color: white;
+        }
+        .country-icon {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #eee;
+            transition: border-color 0.3s ease;
+        }
+        .country-item:hover .country-icon {
+            border-color: white;
+        }
+        .country-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
     </style>
     <link rel="stylesheet" href="css/remote-control.css">
 </head>
@@ -63,6 +112,7 @@
     <section class="content-section">
         <div class="container">
             <a href="index.html#programs" class="back-link" data-i18n="pages.back">← Volver</a>
+            
             <div class="details-grid">
                 <div>
                     <h2 data-i18n="pages.english.h2">Domina el idioma con expertos</h2>
@@ -77,6 +127,34 @@
                 </div>
                 <div>
                     <img src="img/curso.png" alt="Estudiantes de inglés" style="width: 100%; border-radius: var(--radius-lg); box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+
+            <!-- Matriz de Países con Iconos -->
+            <div class="country-matrix">
+                <h2 style="margin-bottom: 10px;">Elige tu destino estrella</h2>
+                <p>Haz clic en un país para explorar los cursos disponibles</p>
+                <div class="country-grid">
+                    <a href="ingles.irlanda.html" class="country-item">
+                        <img src="img/dublin.jpg" alt="Irlanda" class="country-icon">
+                        <span class="country-name">Irlanda</span>
+                    </a>
+                    <a href="ingles.inglaterra.html" class="country-item">
+                        <img src="img/londres.jpg" alt="UK" class="country-icon">
+                        <span class="country-name">UK</span>
+                    </a>
+                    <a href="ingles.espana.html" class="country-item">
+                        <img src="img/brainstorming.jpg" alt="España" class="country-icon">
+                        <span class="country-name">España</span>
+                    </a>
+                    <a href="ingles.malta.html" class="country-item">
+                        <img src="img/Malta2.jpg" alt="Malta" class="country-icon">
+                        <span class="country-name">Malta</span>
+                    </a>
+                    <a href="ingles.chipre.html" class="country-item">
+                        <img src="img/chipre.jpg" alt="Chipre" class="country-icon">
+                        <span class="country-name">Chipre</span>
+                    </a>
                 </div>
             </div>
         </div>

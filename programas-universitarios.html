@@ -20,9 +20,58 @@
             text-align: center;
         }
         .content-section { padding: 60px 0; }
-        .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-bottom: 60px; }
         @media (max-width: 768px) { .details-grid { grid-template-columns: 1fr; } }
         .back-link { display: inline-block; margin-bottom: 20px; color: var(--primary); font-weight: 600; text-decoration: none; }
+        
+        /* Matriz de Países */
+        .country-matrix {
+            margin-top: 40px;
+            padding: 40px;
+            background: #f8f9fa;
+            border-radius: 20px;
+            text-align: center;
+        }
+        .country-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .country-item {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--dark);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .country-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            background: var(--primary);
+            color: white;
+        }
+        .country-icon {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #eee;
+            transition: border-color 0.3s ease;
+        }
+        .country-item:hover .country-icon {
+            border-color: white;
+        }
+        .country-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
     </style>
     <link rel="stylesheet" href="css/remote-control.css">
 </head>
@@ -56,27 +105,56 @@
     <section class="page-header">
         <div class="container">
             <h1 data-i18n="pages.university.title">Programas Universitarios</h1>
-            <p data-i18n="pages.university.subtitle">Licenciaturas y postgrados en universidades de prestigio europeo</p>
+            <p data-i18n="pages.university.subtitle">Grados, Posgrados y Maestrías en las mejores universidades del mundo</p>
         </div>
     </section>
 
     <section class="content-section">
         <div class="container">
             <a href="index.html#programs" class="back-link" data-i18n="pages.back">← Volver</a>
+            
             <div class="details-grid">
                 <div>
-                    <h2 data-i18n="pages.university.h2">Excelencia académica internacional</h2>
-                    <p data-i18n="pages.university.p">Accede a las mejores universidades de Europa con el respaldo de Edu Lingo. Te asesoramos en todo el proceso de admisión y trámites migratorios.</p>
+                    <h2 data-i18n="pages.university.h2">Tu futuro académico sin límites</h2>
+                    <p data-i18n="pages.university.p">Te asesoramos en todo el proceso de admisión para que puedas estudiar tu carrera o maestría en instituciones de prestigio internacional.</p>
                     <ul class="program-benefits" style="margin-top: 20px;">
-                        <li class="benefit-item"><div class="benefit-dot"></div><span data-i18n="pages.university.benefit1">Certificación Internacional de alto nivel</span></li>
-                        <li class="benefit-item"><div class="benefit-dot"></div><span data-i18n="pages.university.benefit2">Oportunidad de Trabajar legalmente</span></li>
-                        <li class="benefit-item"><div class="benefit-dot"></div><span data-i18n="pages.university.benefit3">Visa de Estudio Garantizada</span></li>
-                        <li class="benefit-item"><div class="benefit-dot"></div><span data-i18n="pages.university.benefit4">Acceso a becas y financiamiento</span></li>
+                        <li class="benefit-item"><div class="benefit-dot"></div><span data-i18n="pages.university.benefit1">Acceso a becas y financiamiento</span></li>
+                        <li class="benefit-item"><div class="benefit-dot"></div><span data-i18n="pages.university.benefit2">Títulos oficiales con validez global</span></li>
+                        <li class="benefit-item"><div class="benefit-dot"></div><span data-i18n="pages.university.benefit3">Orientación en la elección de carrera</span></li>
+                        <li class="benefit-item"><div class="benefit-dot"></div><span data-i18n="pages.university.benefit4">Soporte completo en trámites de visa</span></li>
                     </ul>
                     <a href="index.html#contact" class="btn btn--primary" style="margin-top: 30px; display: inline-block;" data-i18n="pages.request_info">Solicitar Asesoría Gratuita</a>
                 </div>
                 <div>
-                    <img src="img/cursou.png" alt="Universidad" style="width: 100%; border-radius: var(--radius-lg); box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <img src="img/university.jpg" alt="Programas Universitarios" style="width: 100%; border-radius: var(--radius-lg); box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+
+            <!-- Matriz de Países para Programas Universitarios -->
+            <div class="country-matrix">
+                <h2 style="margin-bottom: 10px;">Elige tu destino universitario</h2>
+                <p>Selecciona un país para explorar los Grados y Posgrados disponibles</p>
+                <div class="country-grid">
+                    <a href="grado.irlanda.html" class="country-item">
+                        <img src="img/dublin.jpg" alt="Irlanda" class="country-icon">
+                        <span class="country-name">Irlanda</span>
+                    </a>
+                    <a href="grado.uk.html" class="country-item">
+                        <img src="img/londres.jpg" alt="UK" class="country-icon">
+                        <span class="country-name">UK</span>
+                    </a>
+                    <a href="grado.espana.html" class="country-item">
+                        <img src="img/brainstorming.jpg" alt="España" class="country-icon">
+                        <span class="country-name">España</span>
+                    </a>
+                    <a href="grado.malta.html" class="country-item">
+                        <img src="img/Malta2.jpg" alt="Malta" class="country-icon">
+                        <span class="country-name">Malta</span>
+                    </a>
+                    <a href="grado.chipre.html" class="country-item">
+                        <img src="img/chipre.jpg" alt="Chipre" class="country-icon">
+                        <span class="country-name">Chipre</span>
+                    </a>
                 </div>
             </div>
         </div>
