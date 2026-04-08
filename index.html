@@ -28,7 +28,12 @@
     <!-- ============================================
          HEADER & NAVIGATION
          ============================================ -->
-	
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+  <link rel="icon" type="image/png" sizes="50x50" href="img/favicon40.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  
 	
 		<header class="header">
 		<div class="container header-container">
@@ -86,17 +91,17 @@
 
 		<ul class="hero__social">
 		<li>
-        <a href="https://facebook.com/edunexuslingo" target="_blank">
+        <a href="https://www.facebook.com/profile.php?id=61576507255661" target="_blank">
             <img src="img/facebook.png" alt="Facebook" width="55" height="55" style="display: block;">
         </a>
 		</li>
 		<li>
-        <a href="https://instagram.com/edunexuslingo" target="_blank">
+        <a href="https://www.instagram.com/edunexuslingo/" target="_blank">
             <img src="img/insta.png" alt="Instagram" width="55" height="55" style="display: block;">
         </a>
 		</li>
 		<li>
-        <a href="https://tiktok.com/@edulingo" target="_blank">
+        <a href="https://www.tiktok.com/@edulingo7" target="_blank">
             <img src="img/tiktok.png" alt="TikTok" width="55" height="55" style="display: block;">
         </a>
 		</li>
@@ -206,7 +211,7 @@
     <div class="program-body">
         <div class="program-duration">
             <span>⏱️</span>
-            <span data-i18n="programs.english_courses.duration">4 a 12 semanas</span>
+            <span data-i18n="programs.english_courses.duration">1,4,12 o 25 semanas 2 Años</span>
         </div>
 
         <h3 class="program-card-title" data-i18n="programs.english_courses.title">Cursos de Inglés</h3>
@@ -511,6 +516,30 @@
   ═══════════════════════════════════════ -->
       <!-- Contact Section -->
   <form 
+  
+  <form 
+  class="contact-form" 
+  id="contactForm" 
+  action="https://formspree.io/f/mlgonool" 
+  method="POST"
+>
+    <input type="hidden" name="_next" value="https://hablaringlesprofesional.com/index.html">
+
+    <h3 data-i18n="contact.title">Contacta con Nosotros</h3>
+
+    <div class="form-group">
+        <label for="formName" data-i18n="contact.form_name">Nombre</label>
+        <input type="text" id="formName" name="name" required data-i18n-placeholder="contact.form_name">
+    </div>
+    
+    ```
+
+### Un par de consejos extra:
+* **Asegurate de que la URL sea completa:** No pongas solo `index.html`, tenés que poner toda la dirección (ej: `https://hablaringlesprofesional.com/index.html`) para que Formspree sepa exactamente a dónde mandar al usuario de vuelta.
+* **Verificación:** Una vez que guardes los cambios y los subas a tu servidor, hacé una prueba. Formspree debería recibir el dato y redirigirte al instante sin mostrar su propia página de "Thanks".
+
+¡Cualquier otra duda con el código, me avisás!
+  
   class="contact-form" 
   id="contactForm" 
   action="https://formspree.io/f/mlgonool" 
