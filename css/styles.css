@@ -1870,8 +1870,8 @@ nav a:hover::after {
 /* Estilo Botón WhatsApp Flotante Izquierda */
 .whatsapp-float {
     position: fixed;
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
     bottom: 30px;
     left: 30px; /* Posición Izquierda según pedido */
     background-color: #25d366;
@@ -1892,8 +1892,8 @@ nav a:hover::after {
 }
 
 .whatsapp-float img {
-    width: 35px;
-    height: 35px;
+    width: 45px;
+    height: 45px;
 }
 
 /* Banner de Oferta Localizada */
