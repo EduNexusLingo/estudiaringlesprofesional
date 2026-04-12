@@ -161,6 +161,122 @@
             background: var(--primary);
             color: white;
         }
+
+        /* =============================================
+           CARRUSEL DE LOGOS DE ESCUELAS
+        ============================================= */
+        .logos-carousel-section {
+            background: #fff;
+            padding: 28px 0;
+            border-bottom: 2px solid #e8eef5;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .logos-carousel-section::before,
+        .logos-carousel-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 120px;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .logos-carousel-section::before {
+            left: 0;
+            background: linear-gradient(to right, #fff 0%, transparent 100%);
+        }
+        .logos-carousel-section::after {
+            right: 0;
+            background: linear-gradient(to left, #fff 0%, transparent 100%);
+        }
+
+        .logos-track-wrapper {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .logos-track {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            width: max-content;
+            animation: scrollLogos 45s linear infinite;
+        }
+
+        .logos-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scrollLogos {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .logo-item {
+            flex-shrink: 0;
+            width: 140px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 12px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            cursor: pointer;
+        }
+
+        .logo-item img {
+            max-width: 120px;
+            max-height: 52px;
+            object-fit: contain;
+            filter: grayscale(100%) brightness(0.65);
+            transition: filter 0.4s ease, transform 0.4s ease;
+        }
+
+        .logo-item:hover img {
+            filter: grayscale(0%) brightness(1);
+            transform: scale(1.13);
+        }
+
+        .logo-item:hover {
+            box-shadow: 0 6px 22px rgba(0, 102, 204, 0.18);
+            background: #f0f7ff;
+            transform: translateY(-3px);
+        }
+
+        /* =============================================
+           EFECTO ESTRELLAS EN CARDS DESTACADAS
+        ============================================= */
+        .institution-card.is-featured {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .star-particle {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0;
+            z-index: 10;
+            line-height: 1;
+            animation: starBurst 0.85s ease-out forwards;
+        }
+
+        @keyframes starBurst {
+            0% {
+                opacity: 1;
+                transform: translate(0, 0) scale(1.2);
+            }
+            60% {
+                opacity: 0.8;
+            }
+            100% {
+                opacity: 0;
+                transform: translate(var(--tx), var(--ty)) scale(0);
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -190,6 +306,80 @@
         </div>
     </header>
 
+    <!-- CARRUSEL DE LOGOS DE ESCUELAS -->
+    <section class="logos-carousel-section">
+        <div class="logos-track-wrapper">
+            <div class="logos-track" id="logosTrack">
+                <!-- Logos primera pasada -->
+                <div class="logo-item"><img src="img/Irlanda/Emerald7.png" alt="Emerald"></div>
+                <div class="logo-item"><img src="img/Irlanda/Apollo1.png" alt="Apollo"></div>
+                <div class="logo-item"><img src="img/Irlanda/englishour-logo-24.webp" alt="Englishour"></div>
+                <div class="logo-item"><img src="img/Irlanda/Atlas2.jpg" alt="Atlas"></div>
+                <div class="logo-item"><img src="img/Irlanda/DCI_Horizontal-RGB.avif" alt="DCI"></div>
+                <div class="logo-item"><img src="img/Irlanda/Dolfin1.png" alt="Delfin"></div>
+                <div class="logo-item"><img src="img/Irlanda/Everest.png" alt="Everest"></div>
+                <div class="logo-item"><img src="img/Irlanda/ICE.PNG" alt="ICE"></div>
+                <div class="logo-item"><img src="img/Irlanda/CES8.png" alt="ACET"></div>
+                <div class="logo-item"><img src="img/Irlanda/CEC_LOGO.svg" alt="Cork English College"></div>
+                <div class="logo-item"><img src="img/Irlanda/logo.svg" alt="Twin English"></div>
+                <div class="logo-item"><img src="img/Irlanda/Ulernlogo.png" alt="ULearn"></div>
+                <div class="logo-item"><img src="img/Irlanda/Erin School of English-1.webp" alt="Erin School"></div>
+                <div class="logo-item"><img src="img/Irlanda/cet7.png" alt="CES Cork"></div>
+                <div class="logo-item"><img src="img/Irlanda/CEW-001.PNG" alt="Cork English World"></div>
+                <div class="logo-item"><img src="img/Irlanda/DirectEnglish.png" alt="English Talks"></div>
+                <div class="logo-item"><img src="img/Irlanda/EstudentCampus.avif" alt="Student Campus"></div>
+                <div class="logo-item"><img src="img/Irlanda/BirchwaterEducation.avif" alt="Birchwater"></div>
+                <div class="logo-item"><img src="img/Irlanda/EuroLanguaje.svg" alt="Euro Language"></div>
+                <div class="logo-item"><img src="img/Irlanda/Bridge-Mills-Galway-Language-Centre-Classic-1024x252.png.webp" alt="Bridge Mills"></div>
+                <div class="logo-item"><img src="img/Irlanda/EGAInternational.png" alt="EGA International"></div>
+                <div class="logo-item"><img src="img/Irlanda/Killarney-School-of-English.jpg" alt="Killarney School"></div>
+                <div class="logo-item"><img src="img/Irlanda/ATCLogoBlueTRANSPARENT-Web.png" alt="ATC Dublin"></div>
+                <div class="logo-item"><img src="img/Irlanda/CCD_Logo_positive.svg" alt="City College Dublin"></div>
+                <div class="logo-item"><img src="img/Irlanda/Cork-English-AcademyLogo.png" alt="Cork English Academy"></div>
+                <div class="logo-item"><img src="img/Irlanda/DCE_newlogo_White-01-1024x282.png" alt="DCE English"></div>
+                <div class="logo-item"><img src="img/Irlanda/Dorset_Logo_WebSite.png" alt="Dorset College"></div>
+                <div class="logo-item"><img src="img/Irlanda/cropped-Logo-ISI-Dublin.png" alt="ISI Dublin"></div>
+                <div class="logo-item"><img src="img/Irlanda/Limerick Language.PNG" alt="Limerick Language"></div>
+                <div class="logo-item"><img src="img/Irlanda/Swan.png" alt="Swan Dublin"></div>
+                <div class="logo-item"><img src="img/Irlanda/Kaplan-Logo.png" alt="Kaplan"></div>
+                <div class="logo-item"><img src="img/Irlanda/elischool-56.svg" alt="ELI Dublin"></div>
+                <!-- Logos segunda pasada (duplicado para loop infinito) -->
+                <div class="logo-item"><img src="img/Irlanda/Emerald7.png" alt="Emerald"></div>
+                <div class="logo-item"><img src="img/Irlanda/Apollo1.png" alt="Apollo"></div>
+                <div class="logo-item"><img src="img/Irlanda/englishour-logo-24.webp" alt="Englishour"></div>
+                <div class="logo-item"><img src="img/Irlanda/Atlas2.jpg" alt="Atlas"></div>
+                <div class="logo-item"><img src="img/Irlanda/DCI_Horizontal-RGB.avif" alt="DCI"></div>
+                <div class="logo-item"><img src="img/Irlanda/Dolfin1.png" alt="Delfin"></div>
+                <div class="logo-item"><img src="img/Irlanda/Everest.png" alt="Everest"></div>
+                <div class="logo-item"><img src="img/Irlanda/ICE.PNG" alt="ICE"></div>
+                <div class="logo-item"><img src="img/Irlanda/CES8.png" alt="ACET"></div>
+                <div class="logo-item"><img src="img/Irlanda/CEC_LOGO.svg" alt="Cork English College"></div>
+                <div class="logo-item"><img src="img/Irlanda/logo.svg" alt="Twin English"></div>
+                <div class="logo-item"><img src="img/Irlanda/Ulernlogo.png" alt="ULearn"></div>
+                <div class="logo-item"><img src="img/Irlanda/Erin School of English-1.webp" alt="Erin School"></div>
+                <div class="logo-item"><img src="img/Irlanda/cet7.png" alt="CES Cork"></div>
+                <div class="logo-item"><img src="img/Irlanda/CEW-001.PNG" alt="Cork English World"></div>
+                <div class="logo-item"><img src="img/Irlanda/DirectEnglish.png" alt="English Talks"></div>
+                <div class="logo-item"><img src="img/Irlanda/EstudentCampus.avif" alt="Student Campus"></div>
+                <div class="logo-item"><img src="img/Irlanda/BirchwaterEducation.avif" alt="Birchwater"></div>
+                <div class="logo-item"><img src="img/Irlanda/EuroLanguaje.svg" alt="Euro Language"></div>
+                <div class="logo-item"><img src="img/Irlanda/Bridge-Mills-Galway-Language-Centre-Classic-1024x252.png.webp" alt="Bridge Mills"></div>
+                <div class="logo-item"><img src="img/Irlanda/EGAInternational.png" alt="EGA International"></div>
+                <div class="logo-item"><img src="img/Irlanda/Killarney-School-of-English.jpg" alt="Killarney School"></div>
+                <div class="logo-item"><img src="img/Irlanda/ATCLogoBlueTRANSPARENT-Web.png" alt="ATC Dublin"></div>
+                <div class="logo-item"><img src="img/Irlanda/CCD_Logo_positive.svg" alt="City College Dublin"></div>
+                <div class="logo-item"><img src="img/Irlanda/Cork-English-AcademyLogo.png" alt="Cork English Academy"></div>
+                <div class="logo-item"><img src="img/Irlanda/DCE_newlogo_White-01-1024x282.png" alt="DCE English"></div>
+                <div class="logo-item"><img src="img/Irlanda/Dorset_Logo_WebSite.png" alt="Dorset College"></div>
+                <div class="logo-item"><img src="img/Irlanda/cropped-Logo-ISI-Dublin.png" alt="ISI Dublin"></div>
+                <div class="logo-item"><img src="img/Irlanda/Limerick Language.PNG" alt="Limerick Language"></div>
+                <div class="logo-item"><img src="img/Irlanda/Swan.png" alt="Swan Dublin"></div>
+                <div class="logo-item"><img src="img/Irlanda/Kaplan-Logo.png" alt="Kaplan"></div>
+                <div class="logo-item"><img src="img/Irlanda/elischool-56.svg" alt="ELI Dublin"></div>
+            </div>
+        </div>
+    </section>
+
     <section class="page-header">
         <div class="container">
             <h1>Cursos de Inglés en Irlanda</h1>
@@ -209,83 +399,727 @@
             </div>
 
             <div class="institution-grid">
-                <!-- Card 1: Pulse College (Audio & Music) -->
-                <div class="institution-card">
-                    <div class="card-image" style="background-image: url('img/hero-bg.webp');">
-                        <span class="card-badge">Destacado</span>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Pulse College</h3>
-                        <div class="card-info">📍 Dublín (Windmill Lane Studios)</div>
-                        <p>Especialistas en tecnología de audio, música y medios interactivos con reconocimiento internacional.</p>
-                    </div>
-                    <div class="card-details">
-                        <strong>Programas:</strong> Inglés Académico + Producción Musical.<br>
-                        <strong>Ventajas:</strong> Acceso a estudios de grabación profesionales (Windmill Lane), profesores de la industria.<br>
-                        <strong>Requisitos:</strong> Nivel B2 de inglés para programas técnicos.
-                    </div>
-                    <div class="card-footer">
-                        <span style="font-weight: 700; color: var(--primary);">Desde €3,000</span>
-                        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
-                    </div>
-                </div>
 
-                <!-- Card 2: Kaplan International -->
-                <div class="institution-card">
-                    <div class="card-image" style="background-image: url('img/dublin.jpg');"></div>
-                    <div class="card-content">
-                        <h3 class="card-title">Kaplan International</h3>
-                        <div class="card-info">📍 Dublín (Temple Bar)</div>
-                        <p>Ubicada en el corazón de Dublín, ofrece una experiencia de inmersión total en la cultura irlandesa.</p>
-                    </div>
-                    <div class="card-details">
-                        <strong>Programas:</strong> Inglés General, Intensivo, Preparación IELTS.<br>
-                        <strong>Instalaciones:</strong> Edificio histórico con tecnología moderna, sala de estudiantes y biblioteca.<br>
-                        <strong>Social:</strong> Programa completo de actividades en Temple Bar.
-                    </div>
-                    <div class="card-footer">
-                        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
-                        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
-                    </div>
-                </div>
+<div class="institution-card is-featured">
+    <div class="card-image" style="background-image: url('img/Irlanda/Emerald5.png');">
+        <span class="card-badge">Destacado</span>
+    </div>				
+    <div class="card-content">
+        <h3 class="card-title">EMERALD</h3>
+        <div class="card-info">📍 Dublín (Rathgar, Dublín 6) <img src="img/Irlanda/Emerald7.png" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>Prestigiosa institución con más de 30 años de experiencia, ubicada en una mansión victoriana con jardines privados.</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> Inglés General, Intensivo, Preparación de Exámenes (IELTS, Cambridge) y cursos para profesores.<br>
+        <strong>Ventajas:</strong> Mentoría académica personalizada y un entorno de estudio tranquilo y exclusivo.<br>
+        <strong>horarios:</strong><br>
+        Mañana: 09:00 - 13:00 (L-V).<br>
+        Tarde: Opciones intensivas disponibles.<br>
+        <strong>Instalaciones:</strong> 22 aulas equipadas, laboratorio de idiomas, biblioteca y restaurante propio.<br>
+        <strong>Social:</strong> Visitas culturales guiadas y talleres de literatura irlandesa.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
 
-                <!-- Card 3: EC English -->
-                <div class="institution-card">
-                    <div class="card-image" style="background-image: url('img/woman.jpg');"></div>
-                    <div class="card-content">
-                        <h3 class="card-title">EC English Dublin</h3>
-                        <div class="card-info">📍 Dublín 6</div>
-                        <p>Escuela moderna y luminosa con un enfoque en el progreso rápido del estudiante.</p>
-                    </div>
-                    <div class="card-details">
-                        <strong>Programas:</strong> Inglés para el trabajo, Inglés en la ciudad.<br>
-                        <strong>Destacado:</strong> Talleres gratuitos de pronunciación y habilidades profesionales.<br>
-                        <strong>Alojamiento:</strong> Residencias de alta calidad y casas de familia.
-                    </div>
-                    <div class="card-footer">
-                        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
-                        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
-                    </div>
-                </div>
+<div class="institution-card is-featured">
+    <div class="card-image" style="background-image: url('img/Irlanda/Apollo1.png');">
+        <span class="card-badge">Destacado</span>
+    </div>				
+    <div class="card-content">
+        <h3 class="card-title">APOLLO</h3>
+        <div class="card-info">📍 Dublín (Lad Lane, Dublín 2) <img src="img/Irlanda/Apollo1.png" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>Escuela moderna y premiada situada en el centro de Dublín, conocida por su enfoque innovador y tecnológico.</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> Real World English, Preparación de Exámenes y programas para jóvenes adultos.<br>
+        <strong>Ventajas:</strong> Única escuela en Dublín premiada con el "Star New School" por su innovación.<br>
+        <strong>horarios:</strong><br>
+        Mañana: 09:00 - 13:15 (L-V).<br>
+        Tarde: 13:45 - 17:00 (L-V).<br>
+        <strong>Instalaciones:</strong> Edificio de 3 plantas con tecnología audiovisual de última generación y zonas lounge.<br>
+        <strong>Social:</strong> Programa "Apollo Experience" con actividades diarias de tarde.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
 
-                <!-- Card 4: Griffith College -->
-                <div class="institution-card">
-                    <div class="card-image" style="background-image: url('img/university.jpg');"></div>
-                    <div class="card-content">
-                        <h3 class="card-title">Griffith College</h3>
-                        <div class="card-info">📍 Dublín, Cork, Limerick</div>
-                        <p>Una de las instituciones privadas más grandes de Irlanda con campus universitarios reales.</p>
-                    </div>
-                    <div class="card-details">
-                        <strong>Programas:</strong> Cursos de inglés de verano, Inglés académico puente para grados.<br>
-                        <strong>Ambiente:</strong> Campus con residencias, biblioteca y cafetería.<br>
-                        <strong>Mix:</strong> Estudiantes de más de 100 nacionalidades.
-                    </div>
-                    <div class="card-footer">
-                        <span style="font-weight: 700; color: var(--primary);">Desde €2,500</span>
-                        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
-                    </div>
-                </div>
+<div class="institution-card is-featured">
+    <div class="card-image" style="background-image: url('img/Irlanda/englishour-4.webp');">
+        <span class="card-badge">Destacado</span>
+    </div>				
+    <div class="card-content">
+        <h3 class="card-title">ENGLISHOUR</h3>
+        <div class="card-info">📍 Dublín (Westmoreland Street, Dublin 2) <img src="img/Irlanda/englishour-logo-24.webp" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>Expertos en comunicación oral con un método directo, situada en el corazón de la ciudad cerca de Trinity College.</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> Cursos enfocados 100% en fluidez, pronunciación y uso natural del idioma.<br>
+        <strong>Ventajas:</strong> Grupos reducidos y una de las mejores relaciones calidad-precio del centro.<br>
+        <strong>horarios:</strong><br>
+        Mañana: 10:00 - 13:20 (L-V).<br>
+        Tarde: 13:50 - 17:00 (L-V).<br>
+        <strong>Instalaciones:</strong> Aulas funcionales con pizarras interactivas en ubicación inmejorable.<br>
+        <strong>Social:</strong> Salidas nocturnas a pubs para práctica real y tours históricos.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
+
+<div class="institution-card is-featured">
+    <div class="card-image" style="background-image: url('img/Irlanda/ATLAS4.JPG');">
+        <span class="card-badge">Destacado</span>
+    </div>				
+    <div class="card-content">
+        <h3 class="card-title">ATLAS</h3>
+        <div class="card-info">📍 Dublín (South Richmond Street, Dublín) <img src="img/Irlanda/Atlas2.jpg" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>Reconocida por su excelencia académica, Atlas ofrece un ambiente vibrante en un edificio icónico frente al Gran Canal.</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> General English (20/25h), Inglés de Negocios y clases electivas gratuitas.<br>
+        <strong>Ventajas:</strong> Talleres gratuitos de búsqueda de empleo y excelente mix de nacionalidades.<br>
+        <strong>horarios:</strong><br>
+        Mañana: 09:00 - 13:10 (L-V).<br>
+        Tarde: Opciones específicas según el curso.<br>
+        <strong>Instalaciones:</strong> 25 aulas luminosas, cafetería con vistas y centro de estudio supervisado.<br>
+        <strong>Social:</strong> Club de cine, deportes y viajes de fin de semana por Irlanda.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
+
+<div class="institution-card is-featured">
+    <div class="card-image" style="background-image: url('img/Irlanda/DCI-01.PNG');">
+        <span class="card-badge">Destacado</span>
+    </div>				
+    <div class="card-content">
+        <h3 class="card-title">DCI</h3>
+        <div class="card-info">📍 Dublín (Dublin City) <img src="img/Irlanda/DCI_Horizontal-RGB.avif" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>Centro moderno con enfoque en el aprendizaje práctico y técnico, ideal para estudiantes con objetivos académicos claros.</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> Inglés General, Académico y Preparación para el examen TIE e IELTS.<br>
+        <strong>Ventajas:</strong> Precios competitivos y seguimiento cercano del progreso del alumno.<br>
+        <strong>horarios:</strong><br>
+        Mañana: 09:00 - 12:15 (L-V).<br>
+        Tarde: <span style="color: red; font-weight: bold;">13:30 - 16:45 (Lunes a Jueves solamente).</span><br>
+        <strong>Instalaciones:</strong> Aulas modernas con tecnología digital y zonas comunes de descanso.<br>
+        <strong>Social:</strong> Programa semanal de actividades culturales y visitas a museos.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
+
+<div class="institution-card">
+    <div class="card-image" style="background-image: url('img/Irlanda/delfin-staff.webp');"></div>				
+    <div class="card-content">
+        <h3 class="card-title">DELFIN DUBLIN</h3>
+        <div class="card-info">📍 Dublín (Parnell Square East, Dublín) <img src="img/Irlanda/Dolfin1.png" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>Famosa por su ambiente divertido y social, Delfin ofrece educación de calidad en una ubicación central histórica.</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> General English, Business English y Preparación de Exámenes de Cambridge.<br>
+        <strong>Ventajas:</strong> Gran comunidad estudiantil y enfoque en "aprender divirtiéndose".<br>
+        <strong>horarios:</strong><br>
+        Mañana: 09:10 - 12:25 (L-V).<br>
+        Tarde: 13:50 - 17:05 (L-V).<br>
+        <strong>Instalaciones:</strong> Edificio georgiano, sala de juegos, biblioteca y café.<br>
+        <strong>Social:</strong> Fiestas estudiantiles, partidos de fútbol y excursiones por toda Irlanda.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
+
+<div class="institution-card">
+    <div class="card-image" style="background-image: url('img/Irlanda/EverestPIC.png');"></div>				
+    <div class="card-content">
+        <h3 class="card-title">EVEREST</h3>
+        <div class="card-info">📍 Dublín (Cumberland st. South Dublín 2) <img src="img/Irlanda/Everest.png" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>Escuela fundada por profesores con un fuerte enfoque académico y seguimiento personalizado del estudiante.</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> Inglés General y preparación intensiva para exámenes oficiales.<br>
+        <strong>Ventajas:</strong> Uso de datos y feedback constante para asegurar el avance de cada alumno.<br>
+        <strong>horarios:</strong><br>
+        Mañana: 09:00 - 12:50 (L-V).<br>
+        Tarde: 13:30 - 16:30 (L-V).<br>
+        <strong>Instalaciones:</strong> Aulas modernas y confortables en una zona céntrica pero tranquila.<br>
+        <strong>Social:</strong> Actividades culturales enfocadas en la historia y la lengua irlandesa.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
+
+<div class="institution-card">
+    <div class="card-image" style="background-image: url('img/Irlanda/ICE-3.jpg');"></div>				
+    <div class="card-content">
+        <h3 class="card-title">ICE</h3>
+        <div class="card-info">📍 Dublín (Malahide, Co. Dublin) <img src="img/Irlanda/ICE.PNG" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>Ubicada en el pintoresco pueblo costero de Malahide, ideal para una experiencia inmersiva y segura.</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> Programas para adultos, jóvenes y campamentos de verano con actividades costeras.<br>
+        <strong>Ventajas:</strong> Entorno residencial de alta calidad y ambiente familiar.<br>
+        <strong>horarios:</strong><br>
+        Mañana: 09:00 - 13:00 (L-V).<br>
+        Tarde: Programas sociales integrados.<br>
+        <strong>Instalaciones:</strong> Centro moderno en el corazón de Malahide, cerca del mar y la estación de tren.<br>
+        <strong>Social:</strong> Navegación, paseos por la playa y visitas al Castillo de Malahide.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
+
+<div class="institution-card">
+    <div class="card-image" style="background-image: url('img/Irlanda/CES7.png');"></div>				
+    <div class="card-content">
+        <h3 class="card-title">ACET</h3>
+        <div class="card-info">📍 Cork (Wellington House, Cork) <img src="img/Irlanda/CES8.png" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>Escuela boutique líder en Cork con un servicio altamente personalizado y ambiente profesional.</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> Inglés para ejecutivos, preparación de exámenes y formación de profesores.<br>
+        <strong>Ventajas:</strong> Miembro de EAQUALS, garantizando los más altos estándares educativos.<br>
+        <strong>horarios:</strong><br>
+        Mañana: 09:00 - 13:00 (L-V).<br>
+        Tarde: 14:00 - 16:30 (Opcional).<br>
+        <strong>Instalaciones:</strong> Elegante edificio histórico con tecnología moderna y laboratorios.<br>
+        <strong>Social:</strong> Tours por la ciudad de Cork y degustaciones en el Mercado Inglés.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
+
+<div class="institution-card">
+    <div class="card-image" style="background-image: url('img/Irlanda/corkenglishcollege-1.jpg');"></div>				
+    <div class="card-content">
+        <h3 class="card-title">CORK ENGLISH COLLEGE</h3>
+        <div class="card-info">📍 Cork (Saint Patrick’s Bridge, Cork) <img src="img/Irlanda/CEC_LOGO.svg" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>Institución familiar premiada, centro oficial de exámenes para Cambridge, IELTS y OET.</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> Inglés General, Inglés con fines específicos (Médico, Aviación) y Prácticas de empresa.<br>
+        <strong>Ventajas:</strong> Centro oficial de exámenes y excelente soporte al estudiante.<br>
+        <strong>horarios:</strong><br>
+        Mañana: 09:00 - 13:15 (L-V).<br>
+        Tarde: 13:45 - 17:00 (L-V).<br>
+        <strong>Instalaciones:</strong> 3 centros en el corazón de Cork con bibliotecas y áreas multimedia.<br>
+        <strong>Social:</strong> Clases de baile irlandés y excursiones a Blarney Castle.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
+
+<div class="institution-card">
+    <div class="card-image" style="background-image: url('img/Irlanda/Twin English Centre Dublin.avif');"></div>				
+    <div class="card-content">
+        <h3 class="card-title">TWIN ENGLISH CENTRE</h3>
+        <div class="card-info">📍 Dublín (N Great George's St, Dublin) <img src="img/Irlanda/logo.svg" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>Parte de un grupo educativo global, Twin destaca por sus programas que combinan clases y experiencia laboral.</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> Inglés General, Inglés para el trabajo y Programas de Prácticas Profesionales.<br>
+        <strong>Ventajas:</strong> Enfoque en la empleabilidad y desarrollo de habilidades laborales.<br>
+        <strong>horarios:</strong><br>
+        Mañana: 09:00 - 13:00 (L-V).<br>
+        Tarde: 13:45 - 17:00 (L-V).<br>
+        <strong>Instalaciones:</strong> Edificio georgiano restaurado con modernas salas de informática.<br>
+        <strong>Social:</strong> Talleres de CV y búsqueda de empleo, además de tours culturales.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
+
+<div class="institution-card">
+    <div class="card-image" style="background-image: url('img/Irlanda/ulearn2.jpg');"></div>				
+    <div class="card-content">
+        <h3 class="card-title">ULEARN</h3>
+        <div class="card-info">📍 Dublín (Harcourt Street, Dublin 2) <img src="img/Irlanda/Ulernlogo.png" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>Con más de 30 años de historia, ULearn es conocida por su ambiente familiar y trato cercano al estudiante.</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> General English, Preparación de Exámenes y programas combinados con actividades.<br>
+        <strong>Ventajas:</strong> Ubicación premium junto a St. Stephen’s Green y precios competitivos.<br>
+        <strong>horarios:</strong><br>
+        Mañana: 09:00 - 12:50 (L-V).<br>
+        Tarde: 13:30 - 16:30 (L-V).<br>
+        <strong>Instalaciones:</strong> Aulas coloridas, zona lounge moderna y acceso a recursos digitales.<br>
+        <strong>Social:</strong> Actividades sociales diarias que fomentan el uso del inglés fuera del aula.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
+
+<div class="institution-card">
+    <div class="card-image" style="background-image: url('img/Irlanda/ERINCOLLEGE.png');"></div>				
+    <div class="card-content">
+        <h3 class="card-title">ERIN SCHOOL</h3>
+        <div class="card-info">📍 Dublín (Rotunda, Dublin) <img src="img/Irlanda/Erin School of English-1.webp" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>Una opción popular por su flexibilidad y multiculturalidad en el centro norte de la ciudad.</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> Inglés General y preparación de examen TIE e IELTS.<br>
+        <strong>Ventajas:</strong> Excelente mix de nacionalidades y ambiente muy dinámico.<br>
+        <strong>horarios:</strong><br>
+        Mañana: 09:00 - 12:15 (L-V).<br>
+        Tarde: 13:45 - 17:00 (L-V).<br>
+        <strong>Instalaciones:</strong> Aulas modernas, laboratorio de computación y área de descanso.<br>
+        <strong>Social:</strong> Clases de conversación gratuitas y salidas grupales por la ciudad.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
+
+<div class="institution-card">
+    <div class="card-image" style="background-image: url('img/Irlanda/CET6.jpg');"></div>				
+    <div class="card-content">
+        <h3 class="card-title">CES CORK</h3>
+        <div class="card-info">📍 Cork (Wellington House, Cork) <img src="img/Irlanda/cet7.png" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>Parte del prestigioso grupo CES, ofrece una educación de primer nivel en la amigable ciudad de Cork.</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> General English, English for Business y preparación intensiva de IELTS.<br>
+        <strong>Ventajas:</strong> Profesores altamente cualificados y acceso a la plataforma online de CES.<br>
+        <strong>horarios:</strong><br>
+        Mañana: 09:00 - 13:00 (L-V).<br>
+        Tarde: 14:00 - 16:30 (Programas intensivos).<br>
+        <strong>Instalaciones:</strong> Aulas con tecnología digital, sala de autoestudio y cafetería cercana.<br>
+        <strong>Social:</strong> Programa social completo que incluye cultura y deportes en Cork.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
+
+<div class="institution-card">
+    <div class="card-image" style="background-image: url('img/Irlanda/CEW-2.avif');"></div>				
+    <div class="card-content">
+        <h3 class="card-title">CORK ENGLISH WORLD</h3>
+        <div class="card-info">📍 Cork (Bishop St, Cork City) <img src="img/Irlanda/CEW-001.PNG" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>Especializada en fluidez y confianza, esta escuela independiente ofrece un ambiente cercano y profesional.</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> Inglés Intensivo, preparación Cambridge y cursos para profesores (TEFL).<br>
+        <strong>Ventajas:</strong> Enfoque en la comunicación real y grupos muy reducidos.<br>
+        <strong>horarios:</strong><br>
+        Mañana: 09:00 - 13:15 (L-V).<br>
+        Tarde: Opciones de tutoría y clases extra.<br>
+        <strong>Instalaciones:</strong> Edificio céntrico con equipamiento multimedia y zona común acogedora.<br>
+        <strong>Social:</strong> Salidas a pubs locales y tours históricos por el condado de Cork.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
+
+<div class="institution-card">
+    <div class="card-image" style="background-image: url('img/Irlanda/EnglishTalks1.jpg');"></div>				
+    <div class="card-content">
+        <h3 class="card-title">ENGLISH TALKS</h3>
+        <div class="card-info">📍 Cork (St. Patrick’s Hill, Cork) <img src="img/Irlanda/DirectEnglish.png" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>Centro moderno en Cork que combina métodos tradicionales con tecnología educativa innovadora.</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> General English, Inglés de Negocios y preparación para exámenes internacionales.<br>
+        <strong>Ventajas:</strong> Metodología interactiva y soporte continuo al estudiante internacional.<br>
+        <strong>horarios:</strong><br>
+        Mañana: 09:00 - 13:00 (L-V).<br>
+        Tarde: 13:30 - 17:30 (L-V).<br>
+        <strong>Instalaciones:</strong> Aulas equipadas, zona de estudio y WIFI de alta velocidad en todo el centro.<br>
+        <strong>Social:</strong> Visitas a museos, noches de cine y eventos culturales en Cork.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
+
+<div class="institution-card">
+    <div class="card-image" style="background-image: url('img/Irlanda/EstudentCampus2.png');"></div>				
+    <div class="card-content">
+        <h3 class="card-title">STUDENT CAMPUS</h3>
+        <div class="card-info">📍 Limerick (Patrick Street, Limerick) <img src="img/Irlanda/EstudentCampus.avif" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>Ubicada en la histórica Limerick, ofrece una experiencia auténtica y una excelente inmersión en la vida irlandesa.</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> General English y preparación específica para el examen TIE.<br>
+        <strong>Ventajas:</strong> Precios muy competitivos y costo de vida más bajo que en Dublín.<br>
+        <strong>horarios:</strong><br>
+        Mañana: 09:00 - 12:15 (L-V).<br>
+        Tarde: 13:30 - 16:45 (L-V).<br>
+        <strong>Instalaciones:</strong> Aulas modernas, área de café y biblioteca técnica.<br>
+        <strong>Social:</strong> Deportes, visitas al King John's Castle y excursiones a los acantilados de Moher.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
+
+<div class="institution-card">
+    <div class="card-image" style="background-image: url('img/Irlanda/BirchwaterEducation3.avif');"></div>				
+    <div class="card-content">
+        <h3 class="card-title">BIRCHWATER EDUCATION</h3>
+        <div class="card-info">📍 Shannon (Ballycasey House, Shannon) <img src="img/Irlanda/BirchwaterEducation.avif" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>Una escuela única en la región de Shannon, perfecta para quienes buscan tranquilidad y un entorno natural.</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> Inglés General y preparación de exámenes en grupos pequeños.<br>
+        <strong>Ventajas:</strong> Atención ultra-personalizada y comunidad local muy acogedora.<br>
+        <strong>horarios:</strong><br>
+        Mañana: 09:00 - 13:00 (L-V).<br>
+        Tarde: Sesiones de estudio individualizado.<br>
+        <strong>Instalaciones:</strong> Instalaciones confortables en un entorno verde, ideal para la concentración.<br>
+        <strong>Social:</strong> Senderismo, visitas a castillos locales y actividades comunitarias.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
+
+<div class="institution-card">
+    <div class="card-image" style="background-image: url('img/Irlanda/EuroLanguaje.png');"></div>				
+    <div class="card-content">
+        <h3 class="card-title">EURO LANGUAGE CENTER</h3>
+        <div class="card-info">📍 Galway (Middle Street, Galway) <img src="img/Irlanda/EuroLanguaje.svg" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>Especialistas en la vibrante Galway, enfocados en integrar al estudiante en la cultura bohemia de la ciudad.</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> General English y cursos intensivos de verano para todas las edades.<br>
+        <strong>Ventajas:</strong> Localización en el centro de Galway, la capital cultural de Irlanda.<br>
+        <strong>horarios:</strong><br>
+        Mañana: 09:00 - 13:00 (L-V).<br>
+        Tarde: Talleres culturales opcionales.<br>
+        <strong>Instalaciones:</strong> Aulas acogedoras con equipamiento moderno cerca del Spanish Arch.<br>
+        <strong>Social:</strong> Música en vivo, festivales locales y paseos por la bahía de Galway.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
+
+<div class="institution-card">
+    <div class="card-image" style="background-image: url('img/Irlanda/Bridge_Mills_Riverside-1024x683.jpg.webp');"></div>				
+    <div class="card-content">
+        <h3 class="card-title">BRIDGE MILLS GALWAY</h3>
+        <div class="card-info">📍 Galway (The Bridge Mills, Galway) <img src="img/Irlanda/Bridge-Mills-Galway-Language-Centre-Classic-1024x252.png.webp" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>Ubicada en un molino restaurado del siglo XVIII a orillas del río Corrib, combina historia y excelencia académica.</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> General English, Preparación Cambridge/IELTS y cursos para profesores.<br>
+        <strong>Ventajas:</strong> Centro con acreditación Quality English en un entorno arquitectónico único.<br>
+        <strong>horarios:</strong><br>
+        Mañana: 09:00 - 12:30 (L-V).<br>
+        Tarde: 13:30 - 15:30 (L-V).<br>
+        <strong>Instalaciones:</strong> Aulas con vistas al río, biblioteca histórica y café artesanal en el edificio.<br>
+        <strong>Social:</strong> Excursiones a Connemara y las Islas Aran.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
+
+<div class="institution-card">
+    <div class="card-image" style="background-image: url('img/Irlanda/EGAInternational1.png');"></div>				
+    <div class="card-content">
+        <h3 class="card-title">EGA INTERNATIONAL</h3>
+        <div class="card-info">📍 Killarney (College Square, Killarney) <img src="img/Irlanda/EGAInternational.png" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>Situada en el corazón del Parque Nacional de Killarney, ofrece una experiencia de aprendizaje rodeada de naturaleza.</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> Inglés General y programas especiales para familias y grupos.<br>
+        <strong>Ventajas:</strong> Ideal para combinar estudio con actividades al aire libre y ecoturismo.<br>
+        <strong>horarios:</strong><br>
+        Mañana: 09:00 - 13:00 (L-V).<br>
+        Tarde: Actividades de aventura integradas.<br>
+        <strong>Instalaciones:</strong> Centro acogedor con tecnología de apoyo y áreas verdes.<br>
+        <strong>Social:</strong> Ciclismo por los lagos, visitas a la Muckross House y cultura gaélica.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
+
+<div class="institution-card">
+    <div class="card-image" style="background-image: url('img/Irlanda/Killarney-School-of-English.jpg');"></div>				
+    <div class="card-content">
+        <h3 class="card-title">KILLARNEY SCHOOL OF ENGLISH</h3>
+        <div class="card-info">📍 Killarney (Muckross Road, Killarney) <img src="img/Irlanda/Killarney-School-of-English.jpg" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>Escuela familiar con décadas de experiencia, conocida por su calidez y su entorno paisajístico espectacular.</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> Cursos de inglés para adultos, jóvenes y programas familiares completos.<br>
+        <strong>Ventajas:</strong> Ambiente extremadamente acogedor y seguro en una de las zonas más bellas de Irlanda.<br>
+        <strong>horarios:</strong><br>
+        Mañana: 09:30 - 12:45 (L-V).<br>
+        Tarde: Opciones de clases individuales y sociales.<br>
+        <strong>Instalaciones:</strong> Aulas luminosas con vistas a la montaña y zonas de descanso para estudiantes.<br>
+        <strong>Social:</strong> Kayak, equitación y tours por el Anillo de Kerry.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
+
+<div class="institution-card">
+    <div class="card-image" style="background-image: url('img/Irlanda/ATCLogoBlueTRANSPARENT-Web.png');"></div>				
+    <div class="card-content">
+        <h3 class="card-title">ATC DUBLIN</h3>
+        <div class="card-info">📍 Dublín (Bray, Dublin) <img src="img/Irlanda/ATCLogoBlueTRANSPARENT-Web.png" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>ATC ofrece programas de alta calidad en Bray, una hermosa ciudad costera a solo 35 minutos del centro de Dublín.</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> Inglés General, Intensivo y preparación específica de exámenes internacionales.<br>
+        <strong>Ventajas:</strong> Localización costera con acceso rápido a la capital y ambiente relajado.<br>
+        <strong>horarios:</strong><br>
+        Mañana: 09:00 - 13:30 (L-V).<br>
+        Tarde: Opciones intensivas por la tarde.<br>
+        <strong>Instalaciones:</strong> Edificio moderno frente al mar con aulas tecnológicas y sala de estudiantes.<br>
+        <strong>Social:</strong> Paseos por los acantilados de Bray-Greystones y actividades en Dublín.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
+
+<div class="institution-card">
+    <div class="card-image" style="background-image: url('img/Irlanda/General-English-533x400.webp');"></div>				
+    <div class="card-content">
+        <h3 class="card-title">CITY COLLEGE DUBLIN</h3>
+        <div class="card-info">📍 Dublín (George Street, Dublín 2) <img src="img/Irlanda/CCD_Logo_positive.svg" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>Enfoque profesional y académico de alto nivel en una institución que ofrece formación para el mundo real.</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> Inglés General Académico, Business English y diplomas profesionales.<br>
+        <strong>Ventajas:</strong> Ambiente más maduro y profesional, ideal para networking y carrera.<br>
+        <strong>horarios:</strong><br>
+        Mañana: 09:00 - 12:15 (L-V).<br>
+        Tarde: <span style="color: red; font-weight: bold;">13:30 - 16:45 (Lunes a Jueves solamente).</span><br>
+        <strong>Instalaciones:</strong> Campus urbano moderno con recursos universitarios y biblioteca digital.<br>
+        <strong>Social:</strong> Conferencias invitadas y eventos de desarrollo profesional.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
+
+<div class="institution-card">
+    <div class="card-image" style="background-image: url('img/Irlanda/CorkEnglishAcademy.png');"></div>				
+    <div class="card-content">
+        <h3 class="card-title">CORK ENGLISH ACADEMY</h3>
+        <div class="card-info">📍 Cork (Drinan Street, Cork City) <img src="img/Irlanda/Cork-English-AcademyLogo.png" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>Academia independiente de alta calidad que destaca por su trato personalizado y su excelente ubicación en Cork.</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> General English e Inglés Académico para estancias de larga duración (Work & Study).<br>
+        <strong>Ventajas:</strong> Especialistas en el programa de 25 semanas con permiso de trabajo.<br>
+        <strong>horarios:</strong><br>
+        Mañana: 09:00 - 12:15 (L-V).<br>
+        Tarde: 13:00 - 16:15 (L-V).<br>
+        <strong>Instalaciones:</strong> Aulas modernas, laboratorio de informática y área social con café gratuito.<br>
+        <strong>Social:</strong> Programa de actividades locales para explorar la vida real en Cork.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
+
+<div class="institution-card">
+    <div class="card-image" style="background-image: url('img/Irlanda/DCE English Language School1n.jpg');"></div>				
+    <div class="card-content">
+        <h3 class="card-title">DCE ENGLISH</h3>
+        <div class="card-info">📍 Dublín (North Cumberland Street, Dublín 1) <img src="img/Irlanda/DCE_newlogo_White-01-1024x282.png" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>DCE se centra en proporcionar una educación accesible y efectiva en una ubicación céntrica y conveniente.</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> Inglés General y preparación específica para exámenes habilitantes para trabajar.<br>
+        <strong>Ventajas:</strong> Precios altamente competitivos y flexibilidad en las inscripciones.<br>
+        <strong>horarios:</strong><br>
+        Mañana: 09:00 - 12:15 (L-V).<br>
+        Tarde: 13:45 - 17:00 (L-V).<br>
+        <strong>Instalaciones:</strong> Aulas funcionales equipadas con medios digitales en el centro de Dublín.<br>
+        <strong>Social:</strong> Actividades recreativas y grupos de intercambio de idiomas.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
+
+<div class="institution-card">
+    <div class="card-image" style="background-image: url('img/Irlanda/Dorcet1.png');"></div>				
+    <div class="card-content">
+        <h3 class="card-title">DORSET COLLEGE</h3>
+        <div class="card-info">📍 Dublín (Belvedere Place, Dublín 1) <img src="img/Irlanda/Dorset_Logo_WebSite.png" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>Institución educativa integral que ofrece desde cursos de inglés hasta grados universitarios, fomentando el progreso académico.</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> Inglés Académico puente hacia estudios superiores y General English.<br>
+        <strong>Ventajas:</strong> Ambiente universitario real y posibilidad de continuar estudios técnicos o de grado.<br>
+        <strong>horarios:</strong><br>
+        Mañana: 09:00 - 12:15 (L-V).<br>
+        Tarde: 13:45 - 17:00 (L-V).<br>
+        <strong>Instalaciones:</strong> Campus amplio con biblioteca, laboratorios y soporte académico completo.<br>
+        <strong>Social:</strong> Integración con estudiantes de carreras universitarias y clubes deportivos.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
+
+<div class="institution-card">
+    <div class="card-image" style="background-image: url('img/Irlanda/isi-dublin-10.jpg');"></div>				
+    <div class="card-content">
+        <h3 class="card-title">ISI DUBLIN</h3>
+        <div class="card-info">📍 Dublín (Meetinghouse Lane, Dublin 7) <img src="img/Irlanda/cropped-Logo-ISI-Dublin.png" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>Combina un diseño interior moderno e industrial con un edificio histórico, ganadora de múltiples premios "Star School".</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> Inglés General e Inglés de Negocios en grupos de máximo 15 alumnos.<br>
+        <strong>Ventajas:</strong> Acreditada por EAQUALS y premiada internacionalmente por su calidad.<br>
+        <strong>horarios:</strong><br>
+        Mañana: 09:00 - 12:15 (L-V).<br>
+        Tarde: 13:30 - 16:45 (L-V).<br>
+        <strong>Instalaciones:</strong> Aulas con muros de piedra vista, pizarras digitales y cafetería "student hub".<br>
+        <strong>Social:</strong> Tours por el barrio de Smithfield y actividades nocturnas temáticas.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
+
+<div class="institution-card">
+    <div class="card-image" style="background-image: url('img/Irlanda/limerick1.webp');"></div>				
+    <div class="card-content">
+        <h3 class="card-title">LIMERICK LANGUAGE CENTRE</h3>
+        <div class="card-info">📍 Limerick (Mallow Street, Limerick) <img src="img/Irlanda/Limerick Language.PNG" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>Ubicada en un elegante edificio georgiano, esta escuela es famosa por su ambiente cálido y profesorado experto.</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> Inglés General y preparación intensiva de exámenes de Cambridge.<br>
+        <strong>Ventajas:</strong> Ambiente familiar donde cada estudiante es conocido por su nombre.<br>
+        <strong>horarios:</strong><br>
+        Mañana: 09:00 - 12:50 (L-V).<br>
+        Tarde: Sesiones extra de conversación.<br>
+        <strong>Instalaciones:</strong> Salas de estudio acogedoras y cocina para estudiantes.<br>
+        <strong>Social:</strong> Visitas a Bunratty Castle y eventos de integración local.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
+
+<div class="institution-card">
+    <div class="card-image" style="background-image: url('img/Irlanda/df4e8f_8eca342da14e4508aec32059b83d9048~mv2.avif');"></div>				
+    <div class="card-content">
+        <h3 class="card-title">SWAN DUBLIN</h3>
+        <div class="card-info">📍 Dublín (Grafton Street, Dublin 2) <img src="img/Irlanda/Swan.png" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>Fundada por una familia de profesores, Swan está situada en la calle más famosa de Dublín: Grafton Street.</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> General English y programas especiales de inmersión cultural.<br>
+        <strong>Ventajas:</strong> Ubicación inmejorable y gran experiencia en gestión de grupos internacionales.<br>
+        <strong>horarios:</strong><br>
+        Mañana: 09:00 - 13:00 (L-V).<br>
+        Tarde: 14:00 - 17:00 (Opciones intensivas).<br>
+        <strong>Instalaciones:</strong> Aulas históricas con tecnología digital en el centro neurálgico de la ciudad.<br>
+        <strong>Social:</strong> Salidas a parques, museos y el vibrante Temple Bar.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
+
+<div class="institution-card">
+    <div class="card-image" style="background-image: url('img/Irlanda/KAPLAN_2_-_AYA.webp');"></div>				
+    <div class="card-content">
+        <h3 class="card-title">KAPLAN</h3>
+        <div class="card-info">📍 Dublín (Temple Bar, Dublin) <img src="img/Irlanda/Kaplan-Logo.png" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>Líder global en educación, Kaplan Dublín se ubica en un edificio del siglo XVIII junto al río Liffey.</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> Inglés K+ (método propio), Preparación IELTS y cursos de larga duración.<br>
+        <strong>Ventajas:</strong> Acceso a la plataforma de aprendizaje K+ y red global de escuelas.<br>
+        <strong>horarios:</strong><br>
+        Mañana: 08:30 - 12:45 (L-V).<br>
+        Tarde: 13:45 - 18:00 (L-V).<br>
+        <strong>Instalaciones:</strong> 10 aulas, centro multimedia y sala de estudiantes en Temple Bar.<br>
+        <strong>Social:</strong> Actividades premium por Dublín y excursiones a Glendalough.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
+
+<div class="institution-card">
+    <div class="card-image" style="background-image: url('img/Irlanda/eli-schools-.webp');"></div>				
+    <div class="card-content">
+        <h3 class="card-title">ELI DUBLIN</h3>
+        <div class="card-info">📍 Dublín (Herbert Place, Dublin 2) <img src="img/Irlanda/elischool-56.svg" style="max-width: 60px; max-height: 30px; vertical-align: middle; margin-left: 10px;" alt="Logo"></div>
+        <p>ELI ofrece una experiencia de alta calidad en edificios georgianos magníficamente restaurados en el distrito de los negocios.</p>
+    </div>
+    <div class="card-details">
+        <strong>Programas:</strong> General English, Preparación de Exámenes y Programas de Trabajo para alumnos No-EU.<br>
+        <strong>Ventajas:</strong> Acreditada por ACELS y EAQUALS, con un enfoque en la excelencia del servicio.<br>
+        <strong>horarios:</strong><br>
+        Mañana: 09:00 - 12:15 (L-V).<br>
+        Tarde: 13:45 - 17:00 (L-V).<br>
+        <strong>Instalaciones:</strong> Aulas de diseño, cocinas modernas y espacios sociales de primer nivel.<br>
+        <strong>Social:</strong> Programa social dinámico y activo durante todo el año.
+    </div>			
+    <div class="card-footer">
+        <span style="font-weight: 700; color: var(--primary);">Consultar precio</span>
+        <a href="index.html#contact" class="btn-card btn-more">Saber más</a>
+    </div>
+</div>
+
+               
+			   
+			   
+			   
+			   
+			   
             </div>
         </div>
     </section>
@@ -295,6 +1129,75 @@
             <p>© 2026 Edu Lingo. Todos los derechos reservados.</p>
         </div>
     </footer>
+    <script>
+    // =============================================
+    // EFECTO EXPLOSION DE ESTRELLAS EN CARDS DESTACADAS
+    // =============================================
+    (function() {
+        var STAR_COLORS = ['#FFD700','#FF6B6B','#4ECDC4','#45B7D1','#96CEB4','#FFEAA7','#DDA0DD','#98FB98','#FF8C69','#87CEEB','#FFA500','#FF69B4'];
+        var STAR_SHAPES = ['★','✦','✧','✨','•','◆','▲','✶','✵','✴'];
+
+        function createStar(card) {
+            var star = document.createElement('span');
+            star.className = 'star-particle';
+
+            var size = Math.random() * 16 + 7;
+            var color = STAR_COLORS[Math.floor(Math.random() * STAR_COLORS.length)];
+            var shape = STAR_SHAPES[Math.floor(Math.random() * STAR_SHAPES.length)];
+
+            var cardW = card.offsetWidth;
+            var cardH = card.offsetHeight;
+            var startX = Math.random() * cardW;
+            var startY = Math.random() * cardH;
+
+            var angle = Math.random() * 2 * Math.PI;
+            var distance = Math.random() * 90 + 35;
+            var tx = Math.cos(angle) * distance;
+            var ty = Math.sin(angle) * distance;
+            var dur = (Math.random() * 0.5 + 0.65).toFixed(2);
+            var delay = (Math.random() * 0.25).toFixed(2);
+
+            star.textContent = shape;
+            star.style.cssText =
+                'left:' + startX + 'px;' +
+                'top:' + startY + 'px;' +
+                'font-size:' + size + 'px;' +
+                'color:' + color + ';' +
+                '--tx:' + tx + 'px;' +
+                '--ty:' + ty + 'px;' +
+                'animation-duration:' + dur + 's;' +
+                'animation-delay:' + delay + 's;' +
+                'text-shadow:0 0 8px ' + color + ';';
+
+            card.appendChild(star);
+            star.addEventListener('animationend', function() { star.remove(); });
+        }
+
+        function burst(card, n) {
+            for (var i = 0; i < n; i++) createStar(card);
+        }
+
+        function init() {
+            var cards = document.querySelectorAll('.institution-card.is-featured');
+            cards.forEach(function(card) {
+                var iv = null;
+                card.addEventListener('mouseenter', function() {
+                    burst(card, 20);
+                    iv = setInterval(function() { burst(card, 9); }, 550);
+                });
+                card.addEventListener('mouseleave', function() {
+                    if (iv) { clearInterval(iv); iv = null; }
+                });
+            });
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    })();
+    </script>
     <script src="js/main.js"></script>
     <script src="js/github-storage.js"></script>
     <script src="js/remote-control.js"></script>
