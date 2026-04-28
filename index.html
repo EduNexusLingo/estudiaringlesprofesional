@@ -524,27 +524,7 @@
   method="POST"
 >
     <input type="hidden" name="_next" value="https://hablaringlesprofesional.com/index.html">
-
-    <h3 data-i18n="contact.title">Contacta con Nosotros</h3>
-
-    <div class="form-group">
-        <label for="formName" data-i18n="contact.form_name">Nombre</label>
-        <input type="text" id="formName" name="name" required data-i18n-placeholder="contact.form_name">
-    </div>
-    
-    ```
-
-### Un par de consejos extra:
-* **Asegurate de que la URL sea completa:** No pongas solo `index.html`, tenés que poner toda la dirección (ej: `https://hablaringlesprofesional.com/index.html`) para que Formspree sepa exactamente a dónde mandar al usuario de vuelta.
-* **Verificación:** Una vez que guardes los cambios y los subas a tu servidor, hacé una prueba. Formspree debería recibir el dato y redirigirte al instante sin mostrar su propia página de "Thanks".
-
-¡Cualquier otra duda con el código, me avisás!
-  
-  class="contact-form" 
-  id="contactForm" 
-  action="https://formspree.io/f/mlgonool" 
-  method="POST"
->
+ 
     <h3 data-i18n="contact.title">Contacta con Nosotros</h3>
 
     <div class="form-group">
@@ -577,12 +557,6 @@
         <label for="formMessage" data-i18n="contact.form_message">Mensaje</label>
         <textarea id="formMessage" name="message" data-i18n-placeholder="contact.form_message"></textarea>
     </div>
-
-    <div class="form-checkbox">
-        <input type="checkbox" id="formTerms" name="terms_accepted" value="yes" required>
-        <label for="formTerms" data-i18n="contact.form_terms">Acepto los términos y condiciones</label>
-    </div>
-
     <button type="submit" class="form-submit" data-i18n="contact.form_submit">Enviar</button>
 </form>
 
