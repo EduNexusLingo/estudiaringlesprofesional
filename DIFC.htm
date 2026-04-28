@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIFC – Dublin International Foundation College - Edu Lingo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+    --primary: #0066cc;
+    --secondary: #004d99;
+    --accent: #ffcc00;
+    --light: #f8f9fa;
+    --dark: #333;
+    --white: #ffffff;
+    --shadow: 0 4px 15px rgba(0,0,0,0.1);
+    --radius: 12px;
+}
+body { font-family: 'Inter', sans-serif; color: var(--dark); background: #f4f7f6; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* HEADER */
+.header { position: sticky; top: 0; z-index: 1000; background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.08); padding: 14px 0; }
+.header-container { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.brand-name { font-family: 'Poppins', sans-serif; font-size: 1.3rem; font-weight: 800; color: var(--primary); text-decoration: none; }
+.brand-subtext { font-size: 0.75rem; color: #888; display: block; }
+.nav-list { list-style: none; display: flex; gap: 24px; }
+.nav-link { text-decoration: none; color: var(--dark); font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
+.nav-link:hover { color: var(--primary); }
+
+/* HERO */
+.page-header { padding: 70px 0 45px; color: white; text-align: center; background-size: cover; background-position: center; position: relative; }
+.page-header::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,77,153,0.88), rgba(0,102,204,0.80)); z-index: 0; }
+.page-header .container { position: relative; z-index: 1; }
+.page-header h1 { font-family: 'Poppins', sans-serif; font-size: 2.2rem; font-weight: 800; margin-bottom: 10px; }
+.page-header p { font-size: 1rem; opacity: 0.9; max-width: 600px; margin: 0 auto 6px; }
+.uni-logo-hero { max-height: 80px; max-width: 200px; object-fit: contain; margin-top: 18px; filter: brightness(0) invert(1); }
+
+/* CONTENT */
+.content-section { padding: 50px 0; }
+.back-link { display: inline-block; margin-bottom: 24px; color: var(--primary); font-weight: 600; text-decoration: none; font-size: 0.95rem; }
+.back-link:hover { text-decoration: underline; }
+.section-heading { font-family: 'Poppins', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--dark); margin-bottom: 6px; margin-top: 36px; padding-left: 14px; border-left: 4px solid var(--primary); }
+.section-heading:first-of-type { margin-top: 0; }
+.section-sub { color: #666; font-size: 0.9rem; margin-bottom: 18px; }
+
+/* INFO BOX */
+.info-box { background: white; border-radius: var(--radius); box-shadow: var(--shadow); padding: 24px 28px; margin-bottom: 30px; display: flex; flex-wrap: wrap; gap: 16px; }
+.info-item { flex: 1 1 180px; }
+.info-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; color: #888; font-weight: 600; margin-bottom: 4px; }
+.info-value { font-size: 0.95rem; font-weight: 600; color: var(--dark); }
+
+/* TABLES */
+.table-wrap { background: white; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; margin-bottom: 32px; }
+.course-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+.course-table thead tr { background: var(--primary); color: white; }
+.course-table th { padding: 11px 14px; text-align: left; font-weight: 600; }
+.course-table td { padding: 10px 14px; border-bottom: 1px solid #eee; color: #444; vertical-align: top; }
+.course-table tr:last-child td { border-bottom: none; }
+.course-table tr:nth-child(even) td { background: #f5f8fc; }
+.badge { display: inline-block; padding: 2px 9px; border-radius: 12px; font-size: 0.75rem; font-weight: 700; }
+.badge-ug { background: #e3f0ff; color: #0055aa; }
+.badge-pg { background: #fff3cd; color: #856404; }
+.badge-part { background: #e8f5e9; color: #2e7d32; }
+
+/* CTA */
+.cta-box { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; border-radius: var(--radius); padding: 32px 28px; text-align: center; margin-top: 40px; }
+.cta-box h3 { font-family: 'Poppins', sans-serif; font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; }
+.cta-box p { opacity: 0.9; margin-bottom: 20px; font-size: 0.95rem; }
+.btn-cta { display: inline-block; background: var(--accent); color: var(--dark); padding: 12px 28px; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 0.95rem; transition: transform 0.2s; }
+.btn-cta:hover { transform: translateY(-2px); }
+
+/* FOOTER */
+footer { background: var(--dark); color: white; padding: 32px 0; text-align: center; font-size: 0.88rem; margin-top: 0; }
+
+@media (max-width: 768px) {
+    .page-header h1 { font-size: 1.6rem; }
+    .course-table { font-size: 0.8rem; }
+    .nav-list { display: none; }
+}
+</style>
+</head>
+<body>
+<header class="header">
+    <div class="container header-container">
+        <div>
+            <a href="University.html" class="brand-name">Edu Lingo</a>
+            <span class="brand-subtext">Study in Ireland</span>
+        </div>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="University.html" class="nav-link">Universities</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="page-header" style="background-image: url('img2/difc-2.png');">
+    <div class="container">
+        <h1>DIFC – Dublin International Foundation College</h1>
+        <p>Your Pathway to Ireland's Top Universities</p>
+        <img src="img2/difc.png" alt="DIFC – Dublin International Foundation College logo" class="uni-logo-hero">
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <a href="University.html" class="back-link">← Back to All Universities</a>
+
+        <div class="info-box">
+            <div class="info-item"><div class="info-label">Location</div><div class="info-value">Dublin City Centre</div></div>
+            <div class="info-item"><div class="info-label">Established</div><div class="info-value">2005</div></div>
+            <div class="info-item"><div class="info-label">Type</div><div class="info-value">Private Foundation College</div></div>
+            <div class="info-item"><div class="info-label">Website</div><div class="info-value"><a href="https://www.difc.ie" target="_blank" style="color:var(--primary);">www.difc.ie</a></div></div>
+        </div>
+
+        <h2 class="section-heading">Bachelor's Degree Programmes</h2>
+        <p class="section-sub">Undergraduate programmes leading to a Bachelor's degree (NFQ Level 7/8).</p>
+        
+        <div class="table-wrap">
+            <table class="course-table">
+                <thead>
+                    <tr>
+                        <th>Course Name</th>
+                        <th>Award</th>
+                        <th>Duration</th>
+                        <th>Fees (Non-EU)</th>
+                        <th>Entry Requirements</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><strong>BA Business</strong></td>
+                    <td><span class="badge badge-ug">Bachelor of Arts</span></td>
+                    <td>3 years</td>
+                    <td>€9,500/yr</td>
+                    <td>Foundation Year or equivalent</td>
+                </tr>
+                <tr>
+                    <td><strong>BSc Computing</strong></td>
+                    <td><span class="badge badge-ug">Bachelor of Science</span></td>
+                    <td>4 years</td>
+                    <td>€9,500/yr</td>
+                    <td>Foundation Year + Maths</td>
+                </tr>
+                <tr>
+                    <td><strong>BA International Business</strong></td>
+                    <td><span class="badge badge-ug">Bachelor of Arts</span></td>
+                    <td>3 years</td>
+                    <td>€9,500/yr</td>
+                    <td>Foundation Year or equivalent</td>
+                </tr>
+                <tr>
+                    <td><strong>BSc Information Technology</strong></td>
+                    <td><span class="badge badge-ug">Bachelor of Science</span></td>
+                    <td>4 years</td>
+                    <td>€9,500/yr</td>
+                    <td>Foundation Year + Maths</td>
+                </tr>
+                <tr>
+                    <td><strong>BA Marketing</strong></td>
+                    <td><span class="badge badge-ug">Bachelor of Arts</span></td>
+                    <td>3 years</td>
+                    <td>€9,500/yr</td>
+                    <td>Foundation Year or equivalent</td>
+                </tr>
+                <tr>
+                    <td><strong>Foundation Year (Business)</strong></td>
+                    <td><span class="badge badge-ug">Foundation Programme</span></td>
+                    <td>1 year</td>
+                    <td>€9,500/yr</td>
+                    <td>Secondary school certificate</td>
+                </tr>
+                <tr>
+                    <td><strong>Foundation Year (Computing)</strong></td>
+                    <td><span class="badge badge-ug">Foundation Programme</span></td>
+                    <td>1 year</td>
+                    <td>€9,500/yr</td>
+                    <td>Secondary school certificate</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 class="section-heading">Master's Degree Programmes</h2>
+        <p class="section-sub">Postgraduate programmes leading to a Master's degree or PhD (NFQ Level 9/10).</p>
+        
+        <div class="table-wrap">
+            <table class="course-table">
+                <thead>
+                    <tr>
+                        <th>Course Name</th>
+                        <th>Award</th>
+                        <th>Duration</th>
+                        <th>Fees (Non-EU)</th>
+                        <th>Entry Requirements</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><strong>MBA</strong></td>
+                    <td><span class="badge badge-pg">Master of Business Administration</span></td>
+                    <td>1 year</td>
+                    <td>€12,000</td>
+                    <td>Degree + 3 yrs experience</td>
+                </tr>
+                <tr>
+                    <td><strong>MSc Business Analytics</strong></td>
+                    <td><span class="badge badge-pg">Master of Science</span></td>
+                    <td>1 year</td>
+                    <td>€12,500</td>
+                    <td>Business / Computing degree</td>
+                </tr>
+                <tr>
+                    <td><strong>MSc International Business</strong></td>
+                    <td><span class="badge badge-pg">Master of Science</span></td>
+                    <td>1 year</td>
+                    <td>€12,000</td>
+                    <td>Business degree</td>
+                </tr>
+                <tr>
+                    <td><strong>MSc Computing</strong></td>
+                    <td><span class="badge badge-pg">Master of Science</span></td>
+                    <td>1 year</td>
+                    <td>€12,500</td>
+                    <td>Computing degree</td>
+                </tr>
+                <tr>
+                    <td><strong>MSc Finance</strong></td>
+                    <td><span class="badge badge-pg">Master of Science</span></td>
+                    <td>1 year</td>
+                    <td>€12,000</td>
+                    <td>Finance / Business degree</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="cta-box">
+            <h3>Interested in studying at DIFC – Dublin International Foundation College?</h3>
+            <p>We help you with the application process, visa support and finding the best scholarship options available.</p>
+            <a href="index.html#contact" class="btn-cta">Get Free Advice</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>© 2026 Edu Lingo. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
