@@ -521,7 +521,7 @@
 		action="https://formspree.io/f/mlgonool" 
 		method="POST"
 		>
-		<input type="hidden" name="_next" value="https://hablaringlesprofesional.com/index.html">
+		<input type="hidden" name="_next" value="https://www.hablaringlesprofesional.com">
  
 		<h3 data-i18n="contact.title">Contacta con Nosotros</h3>
 
@@ -555,8 +555,54 @@
         <label for="formMessage" data-i18n="contact.form_message">Mensaje</label>
         <textarea id="formMessage" name="message" data-i18n-placeholder="contact.form_message"></textarea>
 		</div>
-		<button type="submit" class="form-submit" data-i18n="contact.form_submit">Enviar</button>
-		</form>
+<button type="submit" id="contact-form-button" class="form-submit" data-i18n="contact.form_submit">Enviar</button>
+            <p id="contact-form-status" style="margin-top: 1rem; text-align: center; font-weight: bold;"></p>
+			</form>
+
+            <script>
+                var form = document.getElementById("contactForm");
+                
+                async function handleSubmit(event) {
+                  event.preventDefault();
+                  var status = document.getElementById("contact-form-status");
+                  var data = new FormData(event.target);
+                  var button = document.getElementById("contact-form-button");
+                  
+                  button.disabled = true;
+                  status.innerHTML = "Enviando...";
+                  
+                  fetch(event.target.action, {
+                    method: form.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                  }).then(response => {
+                    if (response.ok) {
+                      status.style.color = "green";
+                      status.innerHTML = "¡Gracias! Tu mensaje ha sido enviado correctamente.";
+                      form.reset();
+                      button.disabled = false;
+                    } else {
+                      response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                          status.style.color = "red";
+                          status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                        } else {
+                          status.style.color = "red";
+                          status.innerHTML = "¡Ups! Hubo un problema al enviar el formulario.";
+                        }
+                        button.disabled = false;
+                      })
+                    }
+                  }).catch(error => {
+                    status.style.color = "red";
+                    status.innerHTML = "¡Ups! Hubo un problema al enviar el formulario.";
+                    button.disabled = false;
+                  });
+                }
+                form.addEventListener("submit", handleSubmit)
+            </script>
 
     <!-- ============================================
          FOOTER
